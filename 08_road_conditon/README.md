@@ -1,8 +1,8 @@
-# Improved Illumination
+# Surface segmentation
 
 ## Task
 ```
-For given dark input images, generate bright images
+Image segmentation
 ```
 
 ## Dataset
@@ -16,15 +16,17 @@ For given dark input images, generate bright images
 \_data
     \_ train
         \_ Surface_***
-        \_ *.xml , MASK, *.jpg(images)
-    \_ validate
-        \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
-        \_ validate_labels.csv
+        \_ MASK ,*.xml , *.jpg (images)
+            \_ *.png (mask_images)
+    \_ val
+        \_ MASK ,*.xml , *.jpg (images)
+            \_ *.png (mask_images)
     \_ test
-        \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
-        \_ test_labels.csv (dummy labels)
+        \_ MASK ,*.xml , *.jpg (images)
+            \_ *.png (mask_images)
 
-image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jpg
+image_name = "MP_SEL_SUR_033182.jpg"
+mask_image_name = "MP_SEL_SUR_033182.png"
 ```
 
 ## Data Sample
