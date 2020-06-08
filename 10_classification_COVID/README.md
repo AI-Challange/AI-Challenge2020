@@ -29,10 +29,10 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 ```
 
 ## Data Sample
-<img width=350 src="sample_image/Negative_1.png"/>　　　<img width=350 src="sample_image/Positive_1.png"/>
-                음성_1                                                    양성_1
-<img width=350 src="sample_image/Negative_2.png"/>　　　<img width=350 src="sample_image/Positive_2.png"/>
-                음성_2                                                    양성_2
+<img width=350 src="sample_image/Negative_1.png"/> 음성_1                                  
+<img width=350 src="sample_image/Positive_1.png"/> 양성_1
+<img width=350 src="sample_image/Negative_2.png"/> 음성_2                                  
+<img width=350 src="sample_image/Positive_2.png"/> 양성_2
 
 
 ## Label
