@@ -1,173 +1,121 @@
-# Classification Plants (Multi-Label Classification)
+# MRC Q&A
 
 ## Task
 ```
-For given input images, predict plant and disease (Multi Labels)
+주어진 본문에서 질문에 대한 답을 찾으면 됩니다.
 ```
 
 ## Dataset
+### 본문의 수
 | Phase | # |
 | - | - |
-| train | 38,013 |
-| validate | 8,146 |
-| test | 8,147 |
+| train | 33,119 |
+| validate | 7097 |
+| test | 7098 |
+
+### 질문&답변 수
+| Phase | # |
+| - | - |
+| train | 170,609 |
+| validate | 36,368 |
+| test | 36,448 |
 
 
 ## Data Directory
 ```
 \_data
-    \_ train
-        \_ *.jpg (images)
-        \_ train_labels.txt
-    \_ validate
-        \_ *.jpg (images)
-        \_ validate_labels.txt
-    \_ test
-        \_ *.jpg (images)
-        \_ test_labels.txt (dummy labels)
+    \_ train.json
+    \_ validate.json
+    \_ test.json
+    \_ vocab.json
 ```
+
 
 ## Data Sample
-<img width=500 src="images_for_desc/sample.png"/>
-
-
-## Label
 ```
-# train_labels.txt
-
-cd7bc55c-1c47-4af7-9875-f29147d54115___FREC_Scab_3471.JPG 0 0
-
-(File_name) (Plant_Label) (Disease_Label)
+{
+    "title": "649",
+    "paragraphs": [
+        {
+            "context": "[OSEN=강서정 기자] 걸그룹 우주소녀의 성소가 ‘설특집 2018 아이돌 육상·볼링·양궁·리듬체조·에어로빅 선수권 대회’(이하 아육대) 출연 소감을 전했다.성소는 15일 우주소녀 공식 인스타그램에 “먼저 설날 여러분 새해 복 많이 받으세요~ 이번 설날 ‘아육대’에서 오랜만에 리듬체조도 하게 되었는데 저한테 기대 많이 했는데 이번에 좀 실망을 드린 것 같아요. 그래도 이번에 즐기면서 재밌게 했어요. 너무 좋은 추억이 되었어요!”라는 글을 게재했다.이어 “항상 하면서 좋은 언니, 동생, 친구 만날 수 있고 선생님도 뵐 수 있었고! 저와 2년 동안 함께 고생하셨던 선생님 그리고 이번에 함께 하셨던 선수 분들 고생 많았어요! 너무 축하하고 모두모두 설날 해피!! 우리 팬분들도 걱정 많이 하셨는데 너무 걱정 안해도 돼요 이제. 우정 너무 고마워요”라고 고마운 마음을 전했다.성소는 이날 방송된 MBC ‘아육대’ 리듬체조 경기에 출전했다. 원조 ‘리듬체조 여신’ 성소가 이번에도 기대를 모았는데 발레경력 7년의 에이프릴의 레이첼이 완벽한 경기를 선보이며 성소를 제치고 우승했다. /kangsj@osen.co.kr[사진] 우주소녀 인스타그램",
+            "qas": [
+                {
+                    "question": "걸그룹 우주소녀의 성소가 이 프로그램에 출연해 리듬체조 경기에 출전했는데, 이 프로그램의 이름은?",
+                    "answers": [
+                        {
+                            "answer_start": 450,
+                            "text": "아육대"
+                        }
+                    ],
+                    "id": "m5_306497-1",
+                    "classtype": "work_who"
+                }
+            ]
+        }
+    ],
+    "source": 6
+},
 ```
 
 
 ## Metric
 ```
-The average of Custom Hamming Loss for plants and Custom Hamming Loss for deseases
+각 Character 단위로 비교하여 계산한 F1 Score
 
-Below is the expression
-
-(D is the set of data)
+https://korquad.github.io/에서 제공하는 KorQuAD 2.0 평가 스크립트를 사용하였습니다.
 ```
-<img width=500 src="images_for_desc/custom_hamming_loss.png"/>
 
 
 ## Description
 ```
-The prediction file should include 2 labels distinguished by whitespace like label files line by line. 
+data 폴더의 vocab.json은 train.json의 본문들을 scikit-learn 라이브러리의 CountVectorizer를 이용하여 제작한 vocabulary입니다. 
 
-The Baseline model doesn't predict 'plant and disease labels' seperately, but 'plant with disease'(combined) label like solving single-label problem. 
+Baseline 코드에서는 본문과 질문을 vocab.json을 이용해 길이 128의 sequence로 만들어 모델의 input으로 사용합니다.
 
-So baseline code provides conversion dictonary and function(single-label to multi-label, multi-label to single-label)
+Baseline 모델은 Linear Layer 하나로 구성되어 있으며, 결과는 2개의 output(본문에서 answer의 start index와 end index)로 출력됩니다.
 
-Therefore loss function in baseline code also use single combined label as parameter
+prediction.json은 {"id": "answer_string", "id": "answer_string", ...} 형태의 json 파일로 출력하시면 됩니다.
 
-ex) 
-ground truth label: (Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
-baseline model prediction: Grape___healthy = 14
-loss = loss_fn(11, 14)
+prediction.json의 포맷은 Baseline 코드를 실행시키시면 확인하실 수 있습니다.
+
+Baseline에서 제공되는 코드는 MRC를 위한 간단한 흐름만이 구현되어 있기 때문에, 제대로 동작할 수 있도록 코드를 수정하셔야 합니다.
 ```
 
 
 ## Commands
 ```
 # train
-python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train"
+python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.json" --batch=4 --mode="train"
 
 # test (for submission)
-python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt" --mode="test"
+python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.json" --mode="test" 
 
 
-All options in example commands are default value.
-And Maybe should modify code about "num_classes" for your own multi-label prediction models.
+예시 커맨드에 있는 값은 모두 기본값입니다.
 ```
 
 
-## Dictonary of Labels
+## 본문 카테고리(source) 및 육하원칙(classtype)의 기입 형태 및 설명
 
-### Combined Labels
-| Plant___Disease | Class |
-| - | :-: |
-|Apple___Apple_scab|0|
-|Apple___Black_rot|1|
-|Apple___Cedar_apple_rust|2|
-|Apple___healthy|3|
-|Blueberry___healthy|4|
-|Cherry_(including_sour)___Powdery_mildew|5|
-|Cherry_(including_sour)___healthy|6|
-|Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot|7|
-|Corn_(maize)___Common_rust_|8|
-|Corn_(maize)___Northern_Leaf_Blight|9|
-|Corn_(maize)___healthy|10|
-|Grape___Black_rot|11|
-|Grape___Esca_(Black_Measles)|12|
-|Grape___Leaf_blight_(Isariopsis_Leaf_Spot)|13|
-|Grape___healthy|14|
-|Orange___Haunglongbing_(Citrus_greening)|15|
-|Peach___Bacterial_spot|16|
-|Peach___healthy|17|
-|Pepper,_bell___Bacterial_spot|18|
-|Pepper,_bell___healthy|19|
-|Potato___Early_blight|20|
-|Potato___Late_blight|21|
-|Potato___healthy|22|
-|Raspberry___healthy|23|
-|Soybean___healthy|24|
-|Squash___Powdery_mildew|25|
-|Strawberry___Leaf_scorch|26|
-|Strawberry___healthy|27|
-|Tomato___Bacterial_spot|28|
-|Tomato___Early_blight|29|
-|Tomato___Late_blight|30|
-|Tomato___Leaf_Mold|31|
-|Tomato___Septoria_leaf_spot|32|
-|Tomato___Spider_mites_Two-spotted_spider_mite|33|
-|Tomato___Target_Spot|34|
-|Tomato___Tomato_Yellow_Leaf_Curl_Virus|35|
-|Tomato___Tomato_mosaic_virus|36|
-|Tomato___healthy|37|
+### 본문 카테고리(source)
+| 기입형태 | 해당 본문 카테고리 |
+| - | - |
+|1|정치|
+|2|경제|
+|3|사회|
+|4|생활|
+|5|IT/과학|
+|6|연예|
+|7|스포츠|
+|8|문화|
+|9|미용/건강|
 
-
-### Plant Labels
-| Plant | Class |
-| - | :-: |
-|Apple|0|
-|Blueberry|1|
-|Cherry_(including_sour)|2|
-|Corn_(maize)|3|
-|Grape|4|
-|Orange|5|
-|Peach|6|
-|Pepper,_bell|7|
-|Potato|8|
-|Raspberry|9|
-|Soybean|10|
-|Squash|11|
-|Strawberry|12|
-|Tomato|13|
-
-
-### Disease Labels
-| Disease | Class |
-| - | :-: |
-|Apple_scab|0|
-|Bacterial_spot|1|
-|Black_rot|2|
-|Cedar_apple_rust|3|
-|Cercospora_leaf_spot_Gray_leaf_spot|4|
-|Common_rust_|5|
-|Early_blight|6|
-|Esca_(Black_Measles)|7|
-|Haunglongbing_(Citrus_greening)|8|
-|Late_blight|9|
-|Leaf_Mold|10|
-|Leaf_blight_(Isariopsis_Leaf_Spot)|11|
-|Leaf_scorch|12|
-|Northern_Leaf_Blight|13|
-|Powdery_mildew|14|
-|Septoria_leaf_spot|15|
-|Spider_mites_Two-spotted_spider_mite|16|
-|Target_Spot|17|
-|Tomato_Yellow_Leaf_Curl_Virus|18|
-|Tomato_mosaic_virus|19|
-|healthy|20|
+### 육하원칙(classtype)
+| 기입형태 | 해당 본문 카테고리 |
+| - | - |
+|work_where	|어디서|
+|work_who	|누가|
+|work_what	|무엇을|
+|work_how	|어떻게|
+|work_why	|왜|
+|work_when	|언제|
