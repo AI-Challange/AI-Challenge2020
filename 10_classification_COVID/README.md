@@ -16,32 +16,42 @@ Output : COVID 양성/음성
 ```
 \_data
     \_ train
-        \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
-        \_ train_labels.csv
+        \_ 0.png , 1.png, 2.png ........
+        \_ train_label_COVID.txt or train_label_COVID.xlsx
     \_ validate
-        \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
-        \_ validate_labels.csv
+        \_ 0.png , 1.png, 2.png ........
+        \_ validate_label_COVID.txt or validate_label_COVID.xlsx
     \_ test
-        \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
-        \_ test_labels.csv (dummy labels)
+        \_ 0.png , 1.png, 2.png ........
+        \_ test_label_COVID.txt or test_label_COVID.xlsx        
 
-image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jpg
 ```
 
 ## Data Sample
-<img width=350 src="sample_image/Negative_1.png"/> 음성_1                                  
-<img width=350 src="sample_image/Positive_1.png"/> 양성_1     
-<img width=350 src="sample_image/Negative_2.png"/> 음성_2                                  
-<img width=350 src="sample_image/Positive_2.png"/> 양성_2     
+<img width=200 src="sample_image/Negative_1.png"/> 음성_1                                  
+<img width=200 src="sample_image/Positive_1.png"/> 양성_1     
+<img width=200 src="sample_image/Negative_2.png"/> 음성_2                                  
+<img width=200 src="sample_image/Positive_2.png"/> 양성_2     
 
 
-## Label
+## Label Sample
 ```
-# train_labels.txt
-17080801_S001_L10_E01_C10_cropped.jpg 17080801_S001_L2_E01_C10_cropped.jpg
+# train_label_COVID.txt
+0.png 0
+1.png 1
+2.png 0
+3.png 1
+4.png 1
+5.png 1
+...
+# train_label_COVID.xlsx
+0.png	0
+1.png	1
+2.png	0
+3.png	1
+4.png	1
 
-(dark_image_name) (bright_image_name)
-```
+
 
 ## Metric
 ```
