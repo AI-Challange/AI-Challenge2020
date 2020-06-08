@@ -1,4 +1,4 @@
-# Improved Illumination
+# Classification_COVID
 
 ## Task
 환자의 흉부 CT 이미지를 입력으로, 환자의 COVID 양성/음성 이진 분류 \
