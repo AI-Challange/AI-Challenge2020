@@ -32,7 +32,7 @@ Output : 발화 Text
 ./M0193_M4_OFC_063.pcm 원숭이
 ./M0007_M1_OFC_043.pcm 사과
 ./I0129_M3_OFC_075.pcm 컴퓨터
-./I0187_F4_OFC_084.pcm ﻿저에게친절하게대해주시기때문입니다
+./I0187_F4_OFC_084.pcm 저에게친절하게대해주시기때문입니다
 ./M0192_M4_OFC_063.pcm 주사
 ./M0066_M2_OFC_083.pcm 아빠
 ./I0010_M1_OFC_007.pcm 돌
@@ -40,10 +40,15 @@ Output : 발화 Text
 ./M0187_F4_OFC_036.pcm 세탁기
 ...
 
+※ 발화 레이블에는 띄어쓰기 및 특수문자(., ?, ! 등) 없음
+
 ```
+
 ## Metric
 ```
 평가를 위한 Metric : Accuracy(Exactly Match)
+Exactly Match : 발화 단어/문장 전체 일치여부 판단
+
 ```
 
 ## Commands
