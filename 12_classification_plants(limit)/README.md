@@ -1,1 +1,177 @@
+# Classification Plants (Multi-Label Classification) (Limit)
 
+## Task
+```
+For given input images, predict plant and disease (Multi Labels)
+
+But You should use 5,000,000 or less parameters in model!
+```
+
+## Dataset
+| Phase | # |
+| - | - |
+| train | 38,013 |
+| validate | 8,146 |
+| test | 8,147 |
+
+
+## Data Directory
+```
+\_data
+    \_ train
+        \_ *.jpg (images)
+        \_ train_labels.txt
+    \_ validate
+        \_ *.jpg (images)
+        \_ validate_labels.txt
+    \_ test
+        \_ *.jpg (images)
+        \_ test_labels.txt (dummy labels)
+```
+
+## Data Sample
+<img width=500 src="images_for_desc/sample.png"/>
+
+
+## Label
+```
+# train_labels.txt
+
+cd7bc55c-1c47-4af7-9875-f29147d54115___FREC_Scab_3471.JPG 0 0
+
+(File_name) (Plant_Label) (Disease_Label)
+```
+
+
+## Metric
+```
+The average of Custom Hamming Loss for plants and Custom Hamming Loss for deseases
+
+Below is the expression
+
+(D is the set of data)
+```
+<img width=500 src="images_for_desc/custom_hamming_loss.png"/>
+
+
+## Description
+```
+The prediction file should include 2 labels distinguished by whitespace like label files line by line. 
+
+The Baseline model doesn't predict 'plant and disease labels' seperately, but 'plant with disease'(combined) label like solving single-label problem. 
+
+So baseline code provides conversion dictonary and function(single-label to multi-label, multi-label to single-label)
+
+Therefore loss function in baseline code also use single combined label as parameter
+
+In this problem, You should use 5,000,000 or less parameters in model.
+
+ex) 
+ground truth label: (Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
+baseline model prediction: Grape___healthy = 14
+loss = loss_fn(11, 14)
+```
+
+
+## Commands
+```
+# train
+python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train"
+
+# test (for submission)
+python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt" --mode="test"
+
+
+All options in example commands are default value.
+And Maybe should modify code about "num_classes" for your own multi-label prediction models.
+```
+
+
+## Dictonary of Labels
+
+### Combined Labels
+| Plant___Disease | Class |
+| - | :-: |
+|Apple___Apple_scab|0|
+|Apple___Black_rot|1|
+|Apple___Cedar_apple_rust|2|
+|Apple___healthy|3|
+|Blueberry___healthy|4|
+|Cherry_(including_sour)___Powdery_mildew|5|
+|Cherry_(including_sour)___healthy|6|
+|Corn_(maize)___Cercospora_leaf_spot_Gray_leaf_spot|7|
+|Corn_(maize)___Common_rust_|8|
+|Corn_(maize)___Northern_Leaf_Blight|9|
+|Corn_(maize)___healthy|10|
+|Grape___Black_rot|11|
+|Grape___Esca_(Black_Measles)|12|
+|Grape___Leaf_blight_(Isariopsis_Leaf_Spot)|13|
+|Grape___healthy|14|
+|Orange___Haunglongbing_(Citrus_greening)|15|
+|Peach___Bacterial_spot|16|
+|Peach___healthy|17|
+|Pepper,_bell___Bacterial_spot|18|
+|Pepper,_bell___healthy|19|
+|Potato___Early_blight|20|
+|Potato___Late_blight|21|
+|Potato___healthy|22|
+|Raspberry___healthy|23|
+|Soybean___healthy|24|
+|Squash___Powdery_mildew|25|
+|Strawberry___Leaf_scorch|26|
+|Strawberry___healthy|27|
+|Tomato___Bacterial_spot|28|
+|Tomato___Early_blight|29|
+|Tomato___Late_blight|30|
+|Tomato___Leaf_Mold|31|
+|Tomato___Septoria_leaf_spot|32|
+|Tomato___Spider_mites_Two-spotted_spider_mite|33|
+|Tomato___Target_Spot|34|
+|Tomato___Tomato_Yellow_Leaf_Curl_Virus|35|
+|Tomato___Tomato_mosaic_virus|36|
+|Tomato___healthy|37|
+
+
+### Plant Labels
+| Plant | Class |
+| - | :-: |
+|Apple|0|
+|Blueberry|1|
+|Cherry_(including_sour)|2|
+|Corn_(maize)|3|
+|Grape|4|
+|Orange|5|
+|Peach|6|
+|Pepper,_bell|7|
+|Potato|8|
+|Raspberry|9|
+|Soybean|10|
+|Squash|11|
+|Strawberry|12|
+|Tomato|13|
+
+
+### Disease Labels
+| Disease | Class |
+| - | :-: |
+|Apple_scab|0|
+|Bacterial_spot|1|
+|Black_rot|2|
+|Cedar_apple_rust|3|
+|Cercospora_leaf_spot_Gray_leaf_spot|4|
+|Common_rust_|5|
+|Early_blight|6|
+|Esca_(Black_Measles)|7|
+|Haunglongbing_(Citrus_greening)|8|
+|Late_blight|9|
+|Leaf_Mold|10|
+|Leaf_blight_(Isariopsis_Leaf_Spot)|11|
+|Leaf_scorch|12|
+|Northern_Leaf_Blight|13|
+|Powdery_mildew|14|
+|Septoria_leaf_spot|15|
+|Spider_mites_Two-spotted_spider_mite|16|
+|Target_Spot|17|
+|Tomato_Yellow_Leaf_Curl_Virus|18|
+|Tomato_mosaic_virus|19|
+|healthy|20|
