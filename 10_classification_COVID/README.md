@@ -7,9 +7,9 @@ Output : COVID 양성/음성
 ## Dataset
 | Phase | # |
 | - | - |
-| train | 283,337 |
-| validate | 106,331 |
-| test | 105,891 |
+| train | 546 |
+| validate | 100 |
+| test | 100 |
 
 
 ## Data Directory
