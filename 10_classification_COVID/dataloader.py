@@ -15,15 +15,14 @@ def get_transform(resize=112, method=Image.BILINEAR):
     transform_list.append(transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)))
     return transforms.Compose(transform_list)
 
-#data.Dataset 상속받아서 사용
+
 class CustomDataset(data.Dataset):
     def __init__(self, root, phase='train'):
         self.root = root
         self.phase = phase
         self.labels = {}
         
-        #train 폴더 안에 label 파일도 포함
-        # 형식 (파일이름 레이블) txt
+
         self.label_path = os.path.join(root, self.phase, self.phase+'_label_COVID.txt')
         with open(self.label_path, 'r') as f:
             file_list = []
@@ -45,13 +44,10 @@ class CustomDataset(data.Dataset):
             is_label = self.labels['label'][index]
             is_label = torch.tensor(int(is_label))
 
-        #이미지 -> 텐서로 변경
         transform = get_transform()
         image = Image.open(image_path).convert('RGB')
         image = transform(image)
 
-        
-        #파일 이름, 텐서 오브젝트, 레이블
         if self.phase != 'test' :
             return (self.labels['file'][index], image, is_label)
         elif self.phase == 'test' :
