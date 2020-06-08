@@ -27,7 +27,7 @@ Output : 발화 Text
 
 ## Label Sample
 ```
-# train_label_COVID.txt
+# train_label.txt
 ./I0007_M1_OFC_105.pcm 사자
 ./M0193_M4_OFC_063.pcm 원숭이
 ./M0007_M1_OFC_043.pcm 사과
