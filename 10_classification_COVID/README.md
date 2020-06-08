@@ -70,7 +70,6 @@ python main.py
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
 
-
-All options in example commands are default value.
+모든 옵션은 default value가 있음
 옵션은 main.py 파일 참고
 ```
