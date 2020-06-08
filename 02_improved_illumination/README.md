@@ -30,8 +30,8 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 ```
 
 ## Data Sample
-<img width=350 src="image_samples/sample_1.png"/>　　　<img width=350 src="image_samples/sample_2.png"/>
-<img width=350 src="image_samples/sample_3.png"/>　　　<img width=350 src="image_samples/sample_4.png"/>
+<img width=350 src="images_for_desc/sample_1.png"/>　　　<img width=350 src="images_for_desc/sample_2.png"/>
+<img width=350 src="images_for_desc/sample_3.png"/>　　　<img width=350 src="images_for_desc/sample_4.png"/>
 
 
 ## Label
