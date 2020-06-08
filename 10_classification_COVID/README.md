@@ -51,17 +51,10 @@ Output : COVID 양성/음성
 3.png	1
 4.png	1
 
-
-
-## Metric
 ```
-The average of L1 Losses 
+## Metric
+평가를 위한 Metric : Accuracy
 
-"bright_image_name" always has illumination code "L2"
-
-Images that have "L2" are our answer images
-
-So we are going to evaluate using them
 ```
 
 ## Description
