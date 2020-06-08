@@ -16,14 +16,11 @@ Output : COVID 양성/음성
 ```
 \_data
     \_ train
-        \_ 0.png , 1.png, 2.png ........
-        \_ train_label_COVID.txt and train_label_COVID.xlsx
+        \_ 0.png , 1.png, 2.png ..., train_label_COVID.txt and train_label_COVID.xlsx
     \_ validate
-        \_ 0.png , 1.png, 2.png ........
-        \_ validate_label_COVID.txt and validate_label_COVID.xlsx
+        \_ 0.png , 1.png, 2.png ..., validate_label_COVID.txt and validate_label_COVID.xlsx
     \_ test
-        \_ 0.png , 1.png, 2.png ........
-        \_ test_label_COVID.txt and test_label_COVID.xlsx        
+        \_ 0.png , 1.png, 2.png ..., test_label_COVID.txt and test_label_COVID.xlsx        
 
 ```
 
