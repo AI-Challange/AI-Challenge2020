@@ -29,8 +29,8 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 ```
 
 ## Data Sample
-<img width=350 src="images_for_desc/sample_1.png"/>　　　<img width=350 src="images_for_desc/sample_2.png"/>
-<img width=350 src="images_for_desc/sample_3.png"/>　　　<img width=350 src="images_for_desc/sample_4.png"/>
+<img width=350 src="sample_image/Negative_1.png"/>　　　<img width=350 src="sample_image/Positive_1.png"/>
+<img width=350 src="sample_image/Negative_2.png"/>　　　<img width=350 src="sample_image/Positive_2.png"/>
 
 
 ## Label
