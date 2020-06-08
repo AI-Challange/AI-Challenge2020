@@ -1,9 +1,8 @@
 # Speech To Text
 
 ## Task
-STT with Noise : 잡음이 함께 녹음된 음성을 text로 변환
-Input : 성인(잡음 포함)의 단어/문장 발화 녹음 파일 \
-※ 잡음 : 정지 및 주행중인 자동차 환경, TV 혹은 라디오 소리
+STT with Noise : 잡음이 함께 녹음된 음성을 text로 변환\
+Input : 성인(잡음 포함)의 단어/문장 발화 녹음 파일 (※ 잡음 : 정지 및 주행중인 자동차 환경, TV 혹은 라디오 소리)\
 Output : 발화 Text
 
 ## Dataset
