@@ -6,7 +6,7 @@ from openpyxl import load_workbook
 def evaluate(prediction_labels, gt_labels, max_vector):
     count = 0.0
     for index, query in enumerate(gt_labels):
-        if gt_labels == prediction_labels[query]:
+        if gt_labels[query] == prediction_labels[query]:
             count += 1.0
 
     acc = count / float(len(prediction_labels))
