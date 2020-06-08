@@ -17,10 +17,8 @@ from model import Vgg19
 try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('COVID')
-    #나이파쪽에서 로더를 위한 라이브러리 제공
 except:
     DATASET_PATH = os.path.join('./data')
-    #로컬 테스트용
 
 
 def _infer(model, cuda, data_loader):
@@ -42,7 +40,6 @@ def _infer(model, cuda, data_loader):
     res_cls = np.argmax(res_fc, axis=1)
     #print('res_cls{}\n{}'.format(res_cls.shape, res_cls))
 
-    #이미지 파일명, 예측값
     return [res_id, res_cls]
 
 
@@ -62,7 +59,6 @@ def feed_infer(output_file, infer_func):
 
 
 def validate(prediction_file, model, validate_dataloader, validate_label_file, cuda):
-    #lambda val loader 넘기고,
     feed_infer(prediction_file, lambda : _infer(model, cuda, data_loader=validate_dataloader))
 
     metric_result = evaluation_metrics(prediction_file, validate_label_file)
@@ -186,7 +182,7 @@ if __name__ == '__main__':
             # scheduler update
             scheduler.step()
 
-            # save model 매 에폭마다 세이브되는중..
+            # save model 
             if epoch % 500 == 0 :
                 save_model(str(epoch + 1), model, optimizer, scheduler)
         
