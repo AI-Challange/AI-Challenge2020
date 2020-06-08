@@ -2,7 +2,7 @@ import argparse
 import numpy as np
 from openpyxl import load_workbook
 
-#Metric 작성
+#Metric
 def evaluate(prediction_labels, gt_labels):
     count = 0.0
     for index, query in enumerate(gt_labels):
