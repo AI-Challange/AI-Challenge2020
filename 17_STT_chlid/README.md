@@ -24,6 +24,12 @@ Output : 발화 Text
         \_ xxxxxxxxxxx.pcm ..., test_label.txt
 
 ```
+## Data Sample
+```
+sample_pcm 폴더 확인
+ - 예시 pcm 데이터 및 wav 변환 파일 제공
+※ Meta Data for .pcm : channels=1, bit_depth=16, sampling_rate=16000
+```
 
 ## Label Sample
 ```
