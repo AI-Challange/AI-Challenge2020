@@ -51,7 +51,7 @@ Output : COVID 양성/음성
 3.png	1
 4.png	1
 
-
+```
 ## Metric
 ```
 평가를 위한 Metric : Accuracy
