@@ -27,7 +27,8 @@ Output : 발화 Text
 ## Data Sample
 ```
 sample_pcm 폴더 확인
- - 예시 pcm 데이터 및 wav 변환 파일 제공
+ - 예시 pcm 데이터 제공
+ - 예시 pcm 데이터를 wav 파일로 변환하여 제공
 ※ Meta Data for .pcm : channels=1, bit_depth=16, sampling_rate=16000
 ```
 
