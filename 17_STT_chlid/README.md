@@ -1,8 +1,8 @@
 # Speech To Text
 
 ## Task
-
-Input : 어린이의 단어,문장 발화 녹음 파일 \
+STT for Child : 어린이(초등 1~4학년)의 음성을 Text로 변환 \
+Input : 어린이의 단어/문장 발화 녹음 파일 \
 Output : 발화 Text
 
 ## Dataset
