@@ -1,7 +1,7 @@
 # Improved Illumination
 
 ## Task
-Input : 흉부 CT 이미지
+Input : 흉부 CT 이미지 / 
 Output : COVID 양성/음성
 
 ## Dataset
@@ -59,18 +59,18 @@ Output : COVID 양성/음성
 
 ## Description
 ```
-For given image, baseline model just do convolutions and decovolutions generating new image that has original image size
+환자의 흉부 CT 이미지를 입력으로, 환자의 COVID 양성/음성 분류
 ```
 
 ## Commands
 ```
 # train
-python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_dir="prediction" --batch=4 --mode="train"
+python main.py 
 
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
 
 
 All options in example commands are default value.
-If you have problem with os.mkdir or shutil.rmtree in baseline code, manually remove prediction_dir and create prediction_dir
+옵션은 main.py 파일 참고
 ```
