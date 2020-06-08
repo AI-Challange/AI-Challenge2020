@@ -1,4 +1,4 @@
-# Improving Illumination
+# Improved Illumination
 
 ## Task
 ```
