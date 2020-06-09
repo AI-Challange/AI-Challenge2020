@@ -82,6 +82,6 @@ python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --m
 ```
 ## reference
 
-[pytorch tutorial][1]
+[TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL][1]
 
 [1]: https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html
