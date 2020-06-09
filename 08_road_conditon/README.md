@@ -80,3 +80,9 @@ python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_i
 python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --mode="test" 
 
 ```
+## reference
+
+```
+https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html
+
+```
