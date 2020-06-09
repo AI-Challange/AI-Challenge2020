@@ -33,12 +33,12 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 
 ## Data Sample
 <img width=350 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
-<img width=350 src="sample_images/xml.PNG"/>　　　
 
 
 ## Label
 ```
 # *.xml
+<img width=500 src="sample_images/xml.PNG"/>　　　
 
 
 ```
