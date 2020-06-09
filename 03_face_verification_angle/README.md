@@ -73,7 +73,7 @@ Baseline code는 siamnetwork로 모델링되어 있으며 이는 자유롭게 �
 train data 기준으로 만들 수 있는 최대 Pair의 수는 10억 쌍 정도이나 
 모든 쌍을 학습에 사용하지 않고 train 실행 시 학습에 사용할 pair를 만들도록 작성되어 있습니다.
 이 부분 역시 자유롭게 변경하여 사용하실 수 있습니다.
-다만, 정확한 evaluation을 위해 label file 양식의 변경은 권장하지 않습니다.
+다만, 정확한 evaluation을 위해 label file 양식은 변경하실 수 없습니다.
 ```
 
 ## Commands
