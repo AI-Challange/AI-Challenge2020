@@ -36,12 +36,11 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 
 
 ## Label
-```
 # *.xml
+
 <img width=500 src="sample_images/xml.PNG"/>　　　
 
 
-```
 
 ## Metric
 ```
