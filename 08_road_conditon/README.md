@@ -32,7 +32,7 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 ```
 
 ## Data Sample
-<img width=350 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
+<img width=350 height = 200 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
 
 ## Data issue
 <img width=350 src="sample_images/data_error.PNG"/>
