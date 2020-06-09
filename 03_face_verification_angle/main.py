@@ -12,15 +12,6 @@ from torch import optim
 from torch.autograd import Variable
 import torchvision.utils
 
-# GPU 할당 변경하기
-GPU_NUM = 1 # 원하는 GPU 번호 입력
-device = torch.device(f'cuda:{GPU_NUM}' if torch.cuda.is_available() else 'cpu')
-torch.cuda.set_device(device) # change allocation of current GPU
-print ('Current cuda device ', torch.cuda.current_device()) # check
-
-import sys
-sys.path.append('/home/centos/project/jh/AIcompetition/5_pytorch/')
-
 from dataloader import data_loader
 from evaluation import evaluation_metrics
 from model import SiameseNetwork
@@ -30,7 +21,7 @@ try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('deepfake')
 except:
-    DATASET_PATH = os.path.join('/home/centos/project/jh/AIcompetition/5_pytorch/data/')
+    DATASET_PATH = os.path.join('./data/')
 
 def _infer(model, cuda, data_loader):
     res_id = []
@@ -40,13 +31,10 @@ def _infer(model, cuda, data_loader):
     for i, data in enumerate(data_loader):
         with torch.no_grad():
             iter1_, x0, iter2_, x1, label = data
-            # onehsot applies in the output of 128 dense vectors which is then converted to 2 dense vectors
             if cuda:
                 x0 = x0.cuda()
                 x1 = x1.cuda()
             output1, output2 = model(x0, x1)
-            label = label.cpu()
-            margin = .2
             euclidean_distance = F.pairwise_distance(output1, output2).cpu()
             euclidean_distances.append(euclidean_distance)
 
@@ -213,7 +201,7 @@ if __name__ == '__main__':
             time_ = datetime.datetime.now()
             elapsed = datetime.datetime.now() - time_
             print('[epoch {}] elapsed: {}'.format(epoch + 1, elapsed))
-            if epoch % 10 == 0:
+            if (epoch+1) % 10 == 0:
                 save_model(str(epoch + 1), model, optimizer)
 
     elif mode == 'test':

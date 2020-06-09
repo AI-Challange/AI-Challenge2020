@@ -107,13 +107,22 @@ image_name = "ZED2_KSC_071987_L_P020901.png", "MP_KSC_000001.jpg" ....
 
 ```
 
+## Description
+```
+dataloader.py : img name기준 오름차순으로 xml 파일 안에 라벨 정보를 불러온 뒤 target 이라는 딕셔너리 형태로 저장, 한 이미지 tensor와 그 이미지에 대한 label이 target이라는 딕셔너리로 매칭되는 방식
+
+model.py : torchvision 내부에 있는 FastRCNN model을 호출하여 사용
+main.py : train, test 함수 구현, test의 경우 submission file 형식으로 저장됨.
+evaluate.py : submission file을 통해 성능 평가
+```
+
 ## Commands
 ```
 # train
 python main.py 
 
 # test (for submission)
-python main.py --num_classes=29 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
+python main.py --num_classes=29 --model_name="1" --prediction_dir="prediction" --mode="test" 
 
 모든 옵션은 default value가 있음
 옵션은 main.py 파일 참고

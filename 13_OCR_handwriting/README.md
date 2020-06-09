@@ -78,6 +78,15 @@ WER(Word Error Rate)를 사용했습니다.
 ```
 
 
+## Description
+```
+dataloader.py : img name기준 오름차순으로 json 파일 안에 라벨 정보를 불러온 뒤 label 이라는 스트링 형태로 저장, 한 이미지 tensor와 그 이미지에 대한 label이 label이라는 스트링으로 매칭되는 방식
+model.py : CRNN으로 구현됨
+main.py : train, test 함수 구현, test의 경우 submission file 형식으로 저장됨.
+evaluate.py : submission file을 통해 성능 평가
+```
+
+
 ## Commands
 ```
 # train
