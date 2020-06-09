@@ -23,7 +23,7 @@
 
 ## Data Sample
 ```
-(title)                                                            (comment)                 (bias)  (hate)
+(title)                                                         (comment)                 (bias)  (hate)
 "'미스터 션샤인' 변요한, 김태리와 같은 양복 입고 학당 방문! 이유는?"	김태리 정말 연기잘해 진짜   none	   none
 ```
 
