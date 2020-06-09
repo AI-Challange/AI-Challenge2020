@@ -2,7 +2,7 @@
 
 ## Task
 ```
-Image segmentation
+Image segmentation 노면 이미지에서 각 영역을 분할하는 문제
 ```
 
 ## Dataset
@@ -33,6 +33,11 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 
 ## Data Sample
 <img width=350 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
+
+## Data issue
+<img width=350 src="sample_images/data_error.PNG"/>
+
+xml 파일 라벨링에서 alley 하위 태그에 attribute가 없는 경우가 존재 -> dataload 시 무시하고 진행하시면 됩니다. mask image에 표시되어 있지 않음
 
 
 ## class_name (21 classes)
