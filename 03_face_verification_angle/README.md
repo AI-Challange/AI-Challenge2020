@@ -7,17 +7,21 @@
 
 ## Dataset
 <img src="images_for_desc/image1.png"/>
+
 | Phase | front | side | total |
 | - | - | - | - |
 | train | 22,050 | 44,100 | 66,150 |
+
 ```
 train data로 정면과 측면 얼굴 이미지를 다양하게 제공합니다. 
 학습 시간 등을 고려하여 dataloader로 부터 자유롭게 로드하여 사용하시면 됩니다.
 ```
+
 | Phase | True | False | total |
 | - | - | - | - | - |
 | validate | 5,000 | 5,000 | 10,000 |
 | test | 10,000 | 10,000 | 20,000 |
+
 ```
 validate와 test data는 정면과 측면 이미지 한 쌍을 Pair로 제공합니다.
 ```
