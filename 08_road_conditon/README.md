@@ -21,9 +21,11 @@ Image segmentation 노면 이미지에서 각 영역을 분할하는 문제
         \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
     \_ val
+        \_ Surface_***
         \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
     \_ test
+        \_ Surface_***
         \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
 
