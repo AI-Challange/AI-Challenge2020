@@ -49,12 +49,14 @@ image_name = "Person"_"Accessory"_"Illumination"_"Expression"_"Camera_Angle"_cro
 ## Label
 ```
 # train_meta.txt
-(image_name)                         (face_id)  (acc)
+(image_name)                         (face_id) (acc_option)
 18082902_S001_L5_E01_C6_cropped.jpg  18082902   none
+18082902_S001_L5_E01_C6_cropped.jpg  18082902   acc
 
 # *****_label.txt
 (none_image_name)                    (acc_image_name)                    (label)
-17090801_S001_L5_E01_C8_cropped.jpg  17090801_S001_L5_E01_C8_cropped.jpg  0
+19081231_S001_L5_E02_C7_cropped.jpg  19081231_S002_L2_E01_C7_cropped.jpg  0
+19081231_S001_L4_E03_C6_cropped.jpg  19090332_S005_L4_E02_C8_cropped.jpg  1
 
 ```
 
