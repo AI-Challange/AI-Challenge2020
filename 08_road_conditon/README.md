@@ -26,8 +26,8 @@ Image segmentation 노면 이미지에서 각 영역을 분할하는 문제
             \_ *.png (mask_images)
     \_ test
         \_ Surface_***
-        \_ MASK, *.xml , *.jpg (images)
-            \_ *.png (mask_images)
+        \_ *.jpg (images)
+          
 
 image_name = "MP_SEL_SUR_033182.jpg"
 mask_image_name = "MP_SEL_SUR_033182.png"
@@ -53,7 +53,7 @@ xml 파일 라벨링에서 alley 하위 태그에 attribute가 없는 경우가 
 mAP(mask IoU = 0.5)
 
 #Submission file(xml format)
-* image height = 1080, width = 1920
+* image height = 1080, width = 1920 이미지 크기를 맞춰주셔야 평가가 가능합니다.
 ```
 <predictions>
   <image name="MP_SEL_SUR_000001">
