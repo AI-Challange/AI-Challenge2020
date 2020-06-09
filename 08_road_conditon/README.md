@@ -32,8 +32,8 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 ```
 
 ## Data Sample
-<img width=350 src="images_for_desc/sample_1.png"/>　　　<img width=350 src="images_for_desc/sample_2.png"/>
-<img width=350 src="images_for_desc/sample_3.png"/>　　　<img width=350 src="images_for_desc/sample_4.png"/>
+<img width=350 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
+<img width=350 src="sample_images/xml.PNG"/>　　　
 
 
 ## Label
