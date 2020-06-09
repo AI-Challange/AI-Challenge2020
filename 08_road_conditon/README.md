@@ -37,7 +37,7 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 
 ## class_name (21 classes)
 
-<img width=350 src="sample_images/class_name.png"/>
+<img width=500 src="sample_images/class_name.png"/>
 
 
 
