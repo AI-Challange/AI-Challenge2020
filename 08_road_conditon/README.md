@@ -35,10 +35,9 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 <img width=350 src="sample_images/MP_SEL_SUR_000001.jpg"/>　　　<img width=350 src="sample_images/MP_SEL_SUR_000001.png"/>
 
 
-## Label
-# *.xml
+## class_name (21 classes)
 
-<img width=500, img height=500 src="sample_images/xml.PNG"/>　　　
+<img width=350 src="sample_images/class_name.png"/>
 
 
 
