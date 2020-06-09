@@ -79,7 +79,7 @@ evaluate.py : submission file을 통해 성능 평가
 ## Commands
 ```
 # train
-python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --batch=16 --mode="train"
+python main.py --num_classes=22 --lr=0.005 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --batch=16 --mode="train"
 
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --mode="test" 
@@ -88,6 +88,12 @@ python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --m
 python evaluate.py --prediction_file predictions/predictions_test.xml
 
 ```
+
+## code issue
+'''
+ImportError : /lib64/libstdc++.so.6: version 'CXXABI_1.3.8' not found (required by ~)
+ -> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:your lib path (ex)/home/centos/anaconda3/envs/env_name/lib)
+'''
 ## reference
 
 [TORCHVISION OBJECT DETECTION FINETUNING TUTORIAL][1]
