@@ -51,7 +51,7 @@ xml 파일 라벨링에서 alley 하위 태그에 attribute가 없는 경우가 
 mAP(mask IoU = 0.5)
 
 #Submission file(xml format)
-* image height = 1080 width = 1920
+* image height = 1080, width = 1920
 ```
 <predictions>
   <image name="MP_SEL_SUR_000001">
