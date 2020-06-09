@@ -84,6 +84,9 @@ python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_i
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --mode="test" 
 
+#evaluate
+python evaluate.py --prediction_file predictions/predictions_test.xml
+
 ```
 ## reference
 
