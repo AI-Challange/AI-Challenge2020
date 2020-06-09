@@ -61,9 +61,12 @@ class CustomDataset(data.Dataset):
         if self.transform is not None:
             img0 = self.transform(img0)
             img1 = self.transform(img1)
-
-        return (self.direc_df.iat[index, 0], img0, self.direc_df.iat[index, 1], img1,
-                torch.from_numpy(np.array([int(self.direc_df.iat[index, 2])], dtype=np.float32)))
+        if self.phase != 'test':
+            return (self.direc_df.iat[index, 0], img0, self.direc_df.iat[index, 1], img1,
+                    torch.from_numpy(np.array([int(self.direc_df.iat[index, 2])], dtype=np.float32)))
+        elif self.phase == 'test':
+            dummy = ""
+            return (self.direc_df.iat[index, 0], img0, self.direc_df.iat[index, 1], img1, dummy)
 
     def __len__(self):
         return len(self.direc_df)
