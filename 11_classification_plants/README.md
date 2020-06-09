@@ -1,4 +1,4 @@
-# Plant Disease Classfication
+# Classfication Plants (Multi-Label Classification)
 
 ## Task
 ```
