@@ -28,7 +28,7 @@ For given input images, predict plant and disease (Multi Labels)
 ```
 
 ## Data Sample
-<img width=500 src="sample.png"/>
+<img width=500 src="images_for_desc/sample.png"/>
 
 
 ## Label
@@ -49,7 +49,7 @@ Below is the expression
 
 (D is the set of data)
 ```
-<img width=500 src="custom_hamming_loss.png"/>
+<img width=500 src="images_for_desc/custom_hamming_loss.png"/>
 
 
 ## Description
