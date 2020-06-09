@@ -46,7 +46,8 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 mAP(mask IoU = 0.5)
 
 #Submission file
-'''
+
+```
 <predictions>
   <image name="MP_SEL_SUR_000001">
     <predict class_name="sidewalk_cement" polygon="1344,949;1344,952;1343,953;1343,959;1344,960;1345,959;1345,955;1344,954;" score="0.09568093717098236" />
@@ -57,7 +58,7 @@ mAP(mask IoU = 0.5)
  </image>
 </predictions>
 
-'''
+```
 
 ## Description
 ```
