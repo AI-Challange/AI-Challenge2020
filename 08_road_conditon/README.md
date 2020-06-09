@@ -7,7 +7,9 @@ Image segmentation
 
 ## Dataset
 | train | image: 32,467 | mask_image: 32,467 | xml_file: 540 |
+
 | validate | image: 7,028 | mask_image: 7,028 | xml_file: 124 |
+
 | test | image: 6,904 | mask_image: 6,857 | xml_file: 136 |
 
 
@@ -16,13 +18,13 @@ Image segmentation
 \_data
     \_ train
         \_ Surface_***
-        \_ MASK ,*.xml , *.jpg (images)
+        \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
     \_ val
-        \_ MASK ,*.xml , *.jpg (images)
+        \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
     \_ test
-        \_ MASK ,*.xml , *.jpg (images)
+        \_ MASK, *.xml , *.jpg (images)
             \_ *.png (mask_images)
 
 image_name = "MP_SEL_SUR_033182.jpg"
@@ -36,21 +38,16 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 
 ## Label
 ```
-# train_labels.txt
-17080801_S001_L10_E01_C10_cropped.jpg 17080801_S001_L2_E01_C10_cropped.jpg
+# *.xml
 
-(dark_image_name) (bright_image_name)
+
 ```
 
 ## Metric
 ```
-The average of L1 Losses 
+mAP(mask IoU = 0.5)
 
-"bright_image_name" always has illumination code "L2"
-
-Images that have "L2" are our answer images
-
-So we are going to evaluate using them
+we evaluate mask IOU and class so you must get mask array and predict class.
 ```
 
 ## Description
