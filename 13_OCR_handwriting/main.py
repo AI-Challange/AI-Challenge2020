@@ -98,7 +98,7 @@ def test(model, device, test_loader, images, texts, lengths, converter, predicti
 
         _, preds = preds.max(2)
         preds = preds.transpose(1, 0).contiguous().view(-1)
-        pred_strings = converter.decode(preds.data, preds_size.data, raw=False)
+        pred_string = converter.decode(preds.data, preds_size.data, raw=False)
 
         
         pred_dict = {'image_path' : test_loader.dataset.get_img_path(i), 'prediction' : pred_string}
