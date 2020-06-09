@@ -48,10 +48,14 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 
 ## Label
 ```
-# train_label.txt
-17080801_S001_L10_E01_C10_cropped.jpg 17080801_S001_L2_E01_C10_cropped.jpg
+# train_meta.txt
+(image_name)                         (face_id)  (ang_option)
+19082212_S001_L1_E01_C8_cropped.jpg  19082212   front
 
-(front_image_name) (side_image_name)
+# *****_label.txt
+(none_image_name)                    (acc_image_name)                    (label)
+19082212_S001_L1_E01_C8_cropped.jpg  19082212_S001_L5_E02_C3_cropped.jpg  0
+
 ```
 
 ## Metric
