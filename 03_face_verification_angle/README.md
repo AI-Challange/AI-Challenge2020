@@ -6,7 +6,7 @@
 ```
 
 ## Dataset
-<img width=800 src="images_for_desc/image.png"/>
+<img width=850 src="images_for_desc/image.png"/>
 
 | Phase | front | side | total |
 | - | - | - | - |
