@@ -81,10 +81,10 @@ evaluate.py : submission file을 통해 성능 평가
 ## Commands
 ```
 # train
-python main.py --num_classes=22 --lr=0.005 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --batch=16 --mode="train"
+python main.py --num_classes=22 --lr=0.005 --cuda=True --num_epochs=10 --batch=16 --mode="train"
 
 # test (for submission)
-python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction" --mode="test" 
+python main.py --batch=4 --model_name= "weights/1.pth" --prediction_file="prediction" --mode="test" 
 
 #evaluate
 python evaluate.py --prediction_file predictions/predictions_test.xml
