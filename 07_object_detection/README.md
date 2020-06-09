@@ -113,7 +113,7 @@ image_name = "ZED2_KSC_071987_L_P020901.png", "MP_KSC_000001.jpg" ....
 python main.py 
 
 # test (for submission)
-python main.py --num_classes=29 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
+python main.py --num_classes=29 --model_name="1" --prediction_dir="prediction" --mode="test" 
 
 모든 옵션은 default value가 있음
 옵션은 main.py 파일 참고
