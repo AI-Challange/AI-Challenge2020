@@ -6,7 +6,7 @@
 ```
 
 ## Dataset
-<img src="images_for_desc/image1.png"/>
+<img width=1000 src="images_for_desc/image1.png"/>
 
 | Phase | front | side | total |
 | - | - | - | - |
@@ -18,7 +18,7 @@ train data로 정면과 측면 얼굴 이미지를 다양하게 제공합니다.
 ```
 
 | Phase | True | False | total |
-| - | - | - | - | - |
+| - | - | - | - |
 | validate | 5,000 | 5,000 | 10,000 |
 | test | 10,000 | 10,000 | 20,000 |
 
@@ -44,7 +44,7 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 ```
 
 ## Data Sample
-<img src="images_for_desc/image2.png"/>　　　<img src="images_for_desc/image3.png"/>
+<img width=400 src="images_for_desc/image2.png"/>　　　<img width=400 src="images_for_desc/image3.png"/>
 
 ## Label
 ```
