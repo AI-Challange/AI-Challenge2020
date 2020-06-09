@@ -32,7 +32,7 @@ validate와 test data는 정면과 측면 이미지 한 쌍을 Pair로 제공합
     \_ train
         \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
         \_ train_meta.csv
-        \_ train_label.csv
+        \_ train_label.csv (train 시 dataloader 코드에서 생성되어 저장됨)
     \_ validate
         \_ ??????_S001_L??_E??_C??_cropped.jpg (images)
         \_ validate_label.csv
@@ -51,18 +51,12 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 # train_label.txt
 17080801_S001_L10_E01_C10_cropped.jpg 17080801_S001_L2_E01_C10_cropped.jpg
 
-(dark_image_name) (bright_image_name)
+(front_image_name) (side_image_name)
 ```
 
 ## Metric
 ```
-The average of L1 Losses 
-
-"bright_image_name" always has illumination code "L2"
-
-Images that have "L2" are our answer images
-
-So we are going to evaluate using them
+F1 score
 ```
 
 ## Description
