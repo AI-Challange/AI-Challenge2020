@@ -70,7 +70,7 @@ ex)
 ## Commands
 ```
 # train
-python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train"
+python main.py --num_classes=38 --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --prediction_file="prediction.txt" --batch=4 --mode="train"
 
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt" --mode="test"

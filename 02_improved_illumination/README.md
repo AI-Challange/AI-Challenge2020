@@ -61,7 +61,7 @@ For given image, baseline model just do convolutions and decovolutions generatin
 ## Commands
 ```
 # train
-python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_dir="prediction" --batch=4 --mode="train"
+python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --prediction_dir="prediction" --batch=4 --mode="train"
 
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
