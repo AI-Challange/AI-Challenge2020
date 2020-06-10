@@ -7,6 +7,9 @@
 
 ## Dataset
 <img width=900 src="images_for_desc/image.png"/>
+```
+모든 이미지의 size는 112*112입니다.
+```
 
 | Phase | front | side | total |
 | - | - | - | - |
