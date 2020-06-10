@@ -6,6 +6,7 @@
 ```
 
 ## Dataset
+#### Image Resolution : 112 X 112
 <img width=900 src="images_for_desc/image.png"/>
 
 | Phase | none | acc | total |
@@ -25,7 +26,6 @@ train data로 액세서리를 착용하지 않은 이미지와 착용한 이미�
 ```
 validate와 test data는 액세서리를 착용하지 않은 이미지와 착용한 이미지 한 쌍을 Pair로 제공합니다.
 ```
-#### Image Resolution : 112 X 112
 
 ## Data Directory
 ```
