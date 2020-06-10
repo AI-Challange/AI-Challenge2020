@@ -2,7 +2,7 @@
 
 ## Task
 환자의 흉부 CT 이미지를 입력으로, 환자의 COVID 양성/음성 이진 분류 \
-Input : 흉부 CT 이미지 \
+Input : 흉부 CT 이미지(384*384*3) \
 Output : COVID 양성/음성
 
 ## Dataset
@@ -26,10 +26,10 @@ Output : COVID 양성/음성
 ```
 
 ## Data Sample
-<img width=200 src="sample_image/Negative_1.png"/> 음성_1                                  
-<img width=200 src="sample_image/Positive_1.png"/> 양성_1     
-<img width=200 src="sample_image/Negative_2.png"/> 음성_2                                  
-<img width=200 src="sample_image/Positive_2.png"/> 양성_2     
+<img width=200 src="sample_image/Negative_1.png"/> 음성_1 (384*384*3)                                 
+<img width=200 src="sample_image/Positive_1.png"/> 양성_1 (384*384*3)    
+<img width=200 src="sample_image/Negative_2.png"/> 음성_2 (384*384*3)                                
+<img width=200 src="sample_image/Positive_2.png"/> 양성_2 (384*384*3)   
 
 
 ## Label Sample
