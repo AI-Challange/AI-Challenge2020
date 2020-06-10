@@ -20,7 +20,7 @@ class CustomDataset(data.Dataset):
         self.labels = {}
         
         self.label_path = os.path.join(root, self.phase, self.phase+'_labels.txt')
-        with open(self.label_path, 'r') as f:
+        with open(self.label_path, 'r', encoding='utf-8-sig') as f:
             file_list = []
             plant_list = []
             disease_list = []
@@ -38,7 +38,7 @@ class CustomDataset(data.Dataset):
     def __getitem__(self, index):
         image_path = os.path.join(self.root, self.phase, self.labels['file'][index])
         
-        if self.phase != 'test' :
+        if self.phase != 'test':
             plant = self.labels['plant'][index]
             plant = torch.tensor(int(plant))
             
