@@ -127,3 +127,6 @@ python main.py --num_classes=29 --model_name="1" --prediction_dir="prediction" -
 모든 옵션은 default value가 있음
 옵션은 main.py 파일 참고
 ```
+## Reference
+mAP 설명
+https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173
