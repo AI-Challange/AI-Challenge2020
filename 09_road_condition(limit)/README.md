@@ -6,6 +6,8 @@ Image segmentation
 ```
 
 ## Dataset
+* image height = 1080, width = 1920, channel = 3
+
 | train | image: 32,467 | mask_image: 32,467 | xml_file: 540 |
 
 | validate | image: 7,028 | mask_image: 7,028 | xml_file: 124 |
