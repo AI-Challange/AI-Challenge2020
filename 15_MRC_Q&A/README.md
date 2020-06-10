@@ -60,15 +60,19 @@
 
 ## Metric
 ```
-각 Character 단위로 비교하여 계산한 F1 Score
+Word Error Rate (WER)
 
-https://korquad.github.io/에서 제공하는 KorQuAD 2.0 평가 스크립트를 사용하였습니다.
+띄어쓰기 단위로 만든 정답의 sequence에서 insertions, deletions, substitutions를 이용하여 아래와 같은 식을 적용합니다.
+
+자세한 설명은 evaluation 코드와 https://en.wikipedia.org/wiki/Word_error_rate 를 참고하시면 됩니다.
 ```
-
+<img width=350 src="images_for_desc/wer.png"/>
 
 ## Description
 ```
 data 폴더의 vocab.json은 train.json의 본문들을 scikit-learn 라이브러리의 CountVectorizer를 이용하여 제작한 vocabulary입니다. 
+
+꼭 vocab.json 을 사용하지 않고 직접 만드셔도 됩니다.
 
 Baseline 코드에서는 본문과 질문을 vocab.json을 이용해 길이 128의 sequence로 만들어 모델의 input으로 사용합니다.
 

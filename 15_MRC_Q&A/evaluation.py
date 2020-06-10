@@ -1,77 +1,39 @@
 import argparse
-import re
-from collections import Counter
 import json
-from bs4 import BeautifulSoup
-import string
-
-'''본 스크립트는 KorQuAD 2.0 평가 스크립트를 바탕으로 작성됨.'''
-
-def normalize_answer(s):    
-    def tag_clean(t):
-        return BeautifulSoup(t, "lxml").get_text()
-
-    def remove_(text):
-        ''' 불필요한 기호 제거 '''
-        text = re.sub("'", " ", text)
-        text = re.sub('"', " ", text)
-        text = re.sub('《', " ", text)
-        text = re.sub('》', " ", text)
-        text = re.sub('<', " ", text)
-        text = re.sub('>', " ", text) 
-        text = re.sub('〈', " ", text)
-        text = re.sub('〉', " ", text)   
-        text = re.sub("\(", " ", text)
-        text = re.sub("\)", " ", text)
-        text = re.sub("‘", " ", text)
-        text = re.sub("’", " ", text)      
-        return text
-
-    def white_space_fix(text):
-        return ' '.join(text.split()).replace('\n','').replace('\t','').replace(' ','')
-
-    def remove_punc(text):
-        exclude = set(string.punctuation)
-        return ''.join(ch for ch in text if ch not in exclude)
-
-    def lower(text):
-        return text.lower()
-
-    return white_space_fix(remove_punc(lower(remove_(tag_clean(s)))))
+import numpy as np
 
 
-def f1_score(prediction, ground_truth):
-    prediction_tokens = normalize_answer(prediction).split()
-    ground_truth_tokens = normalize_answer(ground_truth).split()
-   
-    #F1 by character
-    prediction_Char = []
-    for tok in prediction_tokens:
-        now = [a for a in tok]
-        prediction_Char.extend(now)
-        
-    ground_truth_Char = []
-    for tok in ground_truth_tokens:
-        now = [a for a in tok]
-        ground_truth_Char.extend(now)   
-        
-    common = Counter(prediction_Char) & Counter(ground_truth_Char)
-    num_same = sum(common.values())
-    if num_same == 0:
-        return 0
-    
-    precision = 1.0 * num_same / len(prediction_Char)
-    recall = 1.0 * num_same / len(ground_truth_Char)
-    f1 = (2 * precision * recall) / (precision + recall)
-    
-    return f1
+def edit_distance(r, h):
+    d = np.zeros((len(r)+1)*(len(h)+1), dtype=np.uint8).reshape((len(r)+1, len(h)+1))
+    for i in range(len(r)+1):
+        d[i][0] = i
+    for j in range(len(h)+1):
+        d[0][j] = j
+    for i in range(1, len(r)+1):
+        for j in range(1, len(h)+1):
+            if r[i-1] == h[j-1]:
+                d[i][j] = d[i-1][j-1]
+            else:
+                substitute = d[i-1][j-1] + 1
+                insert = d[i][j-1] + 1
+                delete = d[i-1][j] + 1
+                d[i][j] = min(substitute, insert, delete)
+    return d
+
+
+def wer(r, h):
+    # build the matrix
+    d = edit_distance(r, h)
+    # print the result in aligned way
+    result = float(d[len(r)][len(h)]) / len(r) * 100
+    return result
 
 
 def evaluate(predictions, tests):
     f1 = 0
     for qid, ground_truth in tests.items():
         prediction = predictions[qid]
-        f1 += f1_score(prediction, ground_truth)
+        f1 += wer(ground_truth.split(), prediction.split())
 
     f1 = 100.0 * f1 / len(predictions)
     return f1

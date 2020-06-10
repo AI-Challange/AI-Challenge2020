@@ -58,10 +58,12 @@ class CustomDataset(data.Dataset):
 
                     processed_data = {'answer_pos': torch.LongTensor([a_start, a_end]),
                                       'id': qid,
-                                      'sequence': torch.LongTensor(sequence)}
+                                      'sequence': torch.LongTensor(sequence),
+                                      'context': context}
                 else:
                     processed_data = {'id': qid,
-                                      'sequence': torch.LongTensor(sequence)}
+                                      'sequence': torch.LongTensor(sequence),
+                                      'context': context}
 
                 self.processed_data.append(processed_data)
 

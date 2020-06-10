@@ -1,5 +1,4 @@
 import os
-import math
 import datetime
 import numpy as np
 import time
@@ -27,25 +26,27 @@ def _infer(model, cuda, data_loader):
     res_pred = []
     res_qid = []
     for _, d in enumerate(data_loader):
-        # print(d)
-        seq = d['sequence']
+        seqs = d['sequence']
         qids = d['id']
+        contexts = d['context']
 
         if cuda:
-            seq = seq.type(torch.FloatTensor).cuda()
+            seqs = seqs.type(torch.FloatTensor).cuda()
 
-        for qid, sequence in zip(qids, seq):
-            pred = model(seq)
+        for qid, sequence, context in zip(qids, seqs, contexts):
+            pred = model(sequence)
 
-            for answer_pos in pred:
-                # variable pred includes start and end position of answer
-                answer_start = 0
-                answer_end = 0
+            # variable pred includes start and end position of answer
+            # answer_start = int(pred[0])
+            # answer_end = int(pred[1])
 
-                pred_answer = '베이스라인'
+            answer_start = 2
+            answer_end = 6
 
-                res_pred.append(pred_answer)
-                res_qid.append(qid)
+            pred_answer = context[answer_start:answer_end]
+
+            res_pred.append(pred_answer)
+            res_qid.append(qid)
 
     return [res_qid, res_pred]
 
