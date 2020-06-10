@@ -32,25 +32,24 @@ class CustomDataset(data.Dataset):
 
         self.comments_vec = comments_vector  # 문장 벡터
         self.comments_list = comments_list  # 문장 원본
-
-        bias_name_list = ['none', 'gender', 'others']
-        hate_name_list = ['none', 'hate', 'offensive']
-        from itertools import product
-        bias_hate_list = [bias_name_list, hate_name_list]
-        bias_hate_list = list(product(*bias_hate_list))
-        label_list = []
-        for idx in range(len(comments_list)):
-            labels = (bias_list[idx], hate_list[idx])
-            label_list.append(bias_hate_list.index(labels))
-
-        self.label_list = label_list
+        if self.phase != 'test':
+            bias_name_list = ['none', 'gender', 'others']
+            hate_name_list = ['none', 'hate', 'offensive']
+            from itertools import product
+            bias_hate_list = [bias_name_list, hate_name_list]
+            bias_hate_list = list(product(*bias_hate_list))
+            label_list = []
+            for idx in range(len(comments_list)):
+                labels = (bias_list[idx], hate_list[idx])
+                label_list.append(bias_hate_list.index(labels))
+            self.label_list = label_list
 
     def __getitem__(self, index):
         if self.phase != 'test':
             return (self.comments_list[index], self.comments_vec[index]), self.label_list[index]
         elif self.phase == 'test':
             dummy = ""
-            return (self.comments_list[index], self.comments_vec[index], dummy)
+            return (self.comments_list[index], self.comments_vec[index]), dummy
 
     def __len__(self):
         return len(self.comments_list)
@@ -64,6 +63,7 @@ def make_vocab(root):
             for line in f.readlines()[0:]:
                 v = line.strip().split('\t')
                 comments_list.append(v[0] + v[1])
+
 
     from sklearn.feature_extraction.text import CountVectorizer
     count_vectorizer = CountVectorizer()

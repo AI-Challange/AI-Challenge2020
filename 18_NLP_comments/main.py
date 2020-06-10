@@ -83,12 +83,12 @@ def save_model(model_name, model, optimizer, scheduler):
         'optimizer': optimizer.state_dict(),
         'scheduler': scheduler.state_dict()
     }
-    torch.save(state, os.path.join(model_name + '.pth'))
+    torch.save(state, os.path.join(DATASET_PATH, model_name + '.pth'))
     print('model saved')
 
 
 def load_model(model_name, model, optimizer=None, scheduler=None):
-    state = torch.load(os.path.join(model_name))
+    state = torch.load(os.path.join(DATASET_PATH, model_name))
     model.load_state_dict(state['model'])
     if optimizer is not None:
         optimizer.load_state_dict(state['optimizer'])
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     args.add_argument("--lr", type=float, default=0.001)
     args.add_argument("--cuda", type=bool, default=True)
     args.add_argument("--num_epochs", type=int, default=10)
-    args.add_argument("--print_iter", type=int, default=250)
+    args.add_argument("--print_iter", type=int, default=300)
     args.add_argument("--model_name", type=str, default="model.pth")
     args.add_argument("--prediction_file", type=str, default="prediction.txt")
     args.add_argument("--batch", type=int, default=4)
