@@ -8,6 +8,8 @@ Output : 도로 이미지내의 장애물 클래스와 Confidence, 좌상단, �
 ```
 309562/22742/17411 
 ## Dataset
+* image height = 540, width = 960, channel = 3
+
 
 | Phase | Image | Lable |
 | - | - | - |
