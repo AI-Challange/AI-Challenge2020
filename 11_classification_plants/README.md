@@ -12,6 +12,8 @@ For given input images, predict plant and disease (Multi Labels)
 | validate | 8,146 |
 | test | 8,147 |
 
+### Image Resolution: 256 * 256
+
 
 ## Data Directory
 ```
@@ -29,6 +31,8 @@ For given input images, predict plant and disease (Multi Labels)
 
 ## Data Sample
 <img width=500 src="images_for_desc/sample.png"/>
+
+## Data Sample
 
 
 ## Label
