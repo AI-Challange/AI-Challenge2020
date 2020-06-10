@@ -7,7 +7,7 @@
 
 ## Dataset
 ```
-모든 데이터는 이미지 데이터로, size는 112*112입니다.
+제공되는 모든 데이터는 image data입니다(size : 112*112)
 ```
 
 <img width=900 src="images_for_desc/image.png"/>
