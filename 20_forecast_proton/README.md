@@ -38,8 +38,9 @@ Output : Proton
 ## Metric
 ```
 평가를 위한 Metric : RMSE(Custom)
-<img width=100 src="images_for_desc/RMSE(CUSTOM).png"/>　
 ```
+<img width=100 src="images_for_desc/RMSE(CUSTOM).png"/>　
+
 
 ## Commands
 ```
