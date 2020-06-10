@@ -8,9 +8,9 @@
 ## Dataset
 | Phase | # |
 | - | - |
-| train | 6,867 |
+| train | 7,367 |
 | validate | 500 |
-| test | 500 |
+| test | 0 |
 
 ## Data Directory
 ```
