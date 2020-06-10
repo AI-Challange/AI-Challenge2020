@@ -9,13 +9,6 @@ from torch.optim import Adam
 from torch.optim.lr_scheduler import StepLR
 import argparse
 
-
-# GPU 할당 변경하기
-GPU_NUM = 2 # 원하는 GPU 번호 입력
-device = torch.device(f'cuda:{GPU_NUM}' if torch.cuda.is_available() else 'cpu')
-torch.cuda.set_device(device) # change allocation of current GPU
-print ('Current cuda device ', torch.cuda.current_device()) # check
-
 from dataloader import data_loader
 from evaluation import evaluation_metrics
 from model import Net
@@ -24,7 +17,7 @@ try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('deepfake')
 except:
-    DATASET_PATH = os.path.join('/home/centos/project/jh/AIcompetition/korean_hate/data')
+    DATASET_PATH = os.path.join('./data')
 
 
 def _infer(model, cuda, data_loader):
@@ -137,7 +130,6 @@ if __name__ == '__main__':
         if cuda:
             loss_fn = loss_fn.cuda()
 
-        # optimizer = Adam(model.parameters(), lr=base_lr)
         # set optimizer
         optimizer = Adam(
             [param for param in model.parameters() if param.requires_grad],
