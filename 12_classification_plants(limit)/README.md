@@ -14,7 +14,10 @@ But You should use 5,000,000 or less parameters in model!
 | validate | 8,146 |
 | test | 8,147 |
 
-### Image Resolution: 256 * 256
+## Image Resolution
+```
+256 * 256
+```
 
 
 ## Data Directory

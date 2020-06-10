@@ -12,7 +12,10 @@ For given dark input images, generate bright images
 | validate | 106,331 |
 | test | 105,891 |
 
-### Image Resolution: 112 * 112
+## Image Resolution
+```
+112 * 112
+```
 
 ## Data Directory
 ```
