@@ -79,7 +79,7 @@ train data 기준으로 만들 수 있는 최대 Pair의 수는 약 10억 쌍 �
 ## Commands
 ```
 # train
-python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_dir="prediction" --batch=16 --mode="train"
+python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.txt" --batch=16 --mode="train"
 
 # test (for submission)
 python main.py --batch=16 --model_name="1.pth" --prediction_dir="prediction" --mode="test" 
