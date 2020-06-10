@@ -1,8 +1,10 @@
-# Classfication Plants (Multi-Label Classification)
+# Classification Plants (Multi-Label Classification) (Limit)
 
 ## Task
 ```
 For given input images, predict plant and disease (Multi Labels)
+
+But You should use 5,000,000 or less parameters in model!
 ```
 
 ## Dataset
@@ -61,6 +63,8 @@ The Baseline model doesn't predict 'plant and disease labels' seperately, but 'p
 So baseline code provides conversion dictonary and function(single-label to multi-label, multi-label to single-label)
 
 Therefore loss function in baseline code also use single combined label as parameter
+
+In this problem, You should use 5,000,000 or less parameters in model.
 
 ex) 
 ground truth label: (Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
