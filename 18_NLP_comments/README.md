@@ -54,6 +54,9 @@ dataloader의 make_vocab 함수에는 sklearn의 CountVectorizer 기능을 활�
 [class 관련]
 baseline code에서는 bias와 hate 유형 각 3종을 9개의 클래스로 분류하여 예측하였습니다.
 해당 로직 또한 하나의 예시일 뿐 자유롭게 변경하여 작성하시면 됩니다.
+
+[model save 관련]
+train 10 epochs 마다 저장되도록 구현되어 있습니다. 자유롭게 변경하셔도 됩니다.
 ```
 
 
