@@ -6,9 +6,7 @@
 ```
 
 ## Dataset
-```
-제공되는 모든 데이터는 image data입니다(size : 112*112)
-```
+#### Image Resolution : 112 X 112
 <img width=900 src="images_for_desc/image.png"/>
 
 | Phase | none | acc | total |
