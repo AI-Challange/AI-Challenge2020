@@ -6,6 +6,8 @@
 ```
 
 ## Dataset
+* image size는 이미지마다 다름. json 파일에 이미지 사이즈 정보 참조
+
 | Phase | Image | Label|
 | - | - | - |
 | train | 36,961 | 1 |
