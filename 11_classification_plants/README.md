@@ -63,9 +63,7 @@ So baseline code provides conversion dictonary and function(single-label to mult
 Therefore loss function in baseline code also use single combined label as parameter
 
 ex) 
-ground truth label: (Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
-baseline model prediction: Grape___healthy = 14
-loss = loss_fn(11, 14)
+(Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
 ```
 
 
