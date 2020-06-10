@@ -72,7 +72,7 @@ Word Error Rate (WER)
 ```
 data 폴더의 vocab.json은 train.json의 본문들을 scikit-learn 라이브러리의 CountVectorizer를 이용하여 제작한 vocabulary입니다. 
 
-꼭 vocab.json 을 사용하지 않고 직접 만드셔도 됩니다.
+vocab.json 을 사용하지 않고 직접 만드셔도 됩니다.
 
 Baseline 코드에서는 본문과 질문을 vocab.json을 이용해 길이 128의 sequence로 만들어 모델의 input으로 사용합니다.
 
