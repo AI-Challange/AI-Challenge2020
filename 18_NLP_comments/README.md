@@ -63,7 +63,7 @@ train 10 epochs 마다 저장되도록 구현되어 있습니다. 자유롭게 �
 ## Commands
 ```
 # train
-python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=250 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train" --num_classes 9
+python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=300 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train" --num_classes 9
 
 # test (for submission)
 python main.py --batch=4 --model_name="10.pth" --prediction_file="prediction.txt" --mode="test" 
