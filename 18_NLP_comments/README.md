@@ -60,7 +60,7 @@ baseline code에서는 bias와 hate 유형 각 3종을 9개의 클래스로 분�
 ## Commands
 ```
 # train
-python main.py --lr=0.001 --cuda=True --num_epochs=250 --print_iter=10 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train" --num_classes 9
+python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=250 --model_name="model.pth" --prediction_file="prediction.txt" --batch=4 --mode="train" --num_classes 9
 
 # test (for submission)
 python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt" --mode="test" 
