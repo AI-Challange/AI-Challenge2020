@@ -6,10 +6,6 @@
 ```
 
 ## Dataset
-```
-제공되는 모든 데이터는 image data입니다(size : 112*112)
-```
-
 <img width=900 src="images_for_desc/image.png"/>
 
 | Phase | none | acc | total |
@@ -29,6 +25,7 @@ train data로 액세서리를 착용하지 않은 이미지와 착용한 이미�
 ```
 validate와 test data는 액세서리를 착용하지 않은 이미지와 착용한 이미지 한 쌍을 Pair로 제공합니다.
 ```
+#### Imaga Resolution : 112 X 112
 
 ## Data Directory
 ```
