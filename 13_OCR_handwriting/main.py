@@ -102,7 +102,6 @@ def test(model, device, test_loader, images, texts, lengths, converter, predicti
 
         
         pred_dict = {'image_path' : test_loader.dataset.get_img_path(i), 'prediction' : pred_string}
-        print(pred_string)
         pred_list.append(pred_dict)
 
     pred_json = {'predict' : pred_list}
