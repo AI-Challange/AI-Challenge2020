@@ -57,8 +57,7 @@ sample_pcm 폴더 확인
 
 ## Metric
 ```
-평가를 위한 Metric : Accuracy(Exactly Match)
-Exactly Match : 발화 단어/문장 전체 일치여부 판단
+평가를 위한 Metric : 음절단위 F1
 
 ```
 
