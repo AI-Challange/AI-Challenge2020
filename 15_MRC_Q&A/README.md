@@ -80,8 +80,6 @@ Baseline 코드에서는 본문과 질문을 vocab.json을 이용해 길이 128�
 
 Baseline 모델은 Linear Layer 하나로 구성되어 있으며, 결과는 2개의 output(본문에서 answer의 start index와 end index)로 출력됩니다.
 
-prediction.json은 {"id": "answer_string", "id": "answer_string", ...} 형태의 json 파일로 출력하시면 됩니다.
-
 prediction.json의 포맷은 Baseline 코드를 실행시키시면 확인하실 수 있습니다.
 
 Baseline에서 제공되는 코드는 MRC를 위한 간단한 흐름만이 구현되어 있기 때문에, 제대로 동작할 수 있도록 코드를 수정하셔야 합니다.
@@ -98,4 +96,12 @@ python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.json
 
 
 예시 커맨드에 있는 값은 모두 기본값입니다.
+```
+
+
+## Submission
+```
+prediction.json을 제출하시면 됩니다.
+
+prediction.json은 {"id": "answer_string", "id": "answer_string", ...} 형태입니다.
 ```

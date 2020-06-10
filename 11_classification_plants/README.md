@@ -83,6 +83,16 @@ And Maybe should modify code about "num_classes" for your own multi-label predic
 ```
 
 
+## Submission
+```
+Submit your prediction.txt
+
+The format of each line in text file is "filename plant_label disease_label"
+
+ex) filename.JPG 9 15
+```
+
+
 ## Dictonary of Labels
 
 ### Combined Labels

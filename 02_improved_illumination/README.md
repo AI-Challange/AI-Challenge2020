@@ -70,3 +70,9 @@ python main.py --batch=4 --model_name="1.pth" --prediction_dir="prediction" --mo
 All options in example commands are default value.
 If you have problem with os.mkdir or shutil.rmtree in baseline code, manually remove prediction_dir and create prediction_dir
 ```
+
+
+## Submission
+```
+TBD
+```

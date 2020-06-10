@@ -1,10 +1,8 @@
-# Classification Plants (Multi-Label Classification) (Limit)
+# Classfication Plants (Multi-Label Classification)
 
 ## Task
 ```
 For given input images, predict plant and disease (Multi Labels)
-
-But You should use 5,000,000 or less parameters in model!
 ```
 
 ## Dataset
@@ -64,8 +62,6 @@ So baseline code provides conversion dictonary and function(single-label to mult
 
 Therefore loss function in baseline code also use single combined label as parameter
 
-In this problem, You should use 5,000,000 or less parameters in model.
-
 ex) 
 ground truth label: (Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
 baseline model prediction: Grape___healthy = 14
@@ -84,6 +80,16 @@ python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt"
 
 All options in example commands are default value.
 And Maybe should modify code about "num_classes" for your own multi-label prediction models.
+```
+
+
+## Submission
+```
+Submit your prediction.txt
+
+The format of each line in text file is "filename plant_label disease_label"
+
+ex) filename.JPG 9 15
 ```
 
 
