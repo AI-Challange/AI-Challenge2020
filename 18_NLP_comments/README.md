@@ -8,7 +8,7 @@
 ## Dataset
 | Phase | # |
 | - | - |
-| train | 7,367 |
+| train | 7,867 |
 | validate | 500 |
 | test | 0 |
 
