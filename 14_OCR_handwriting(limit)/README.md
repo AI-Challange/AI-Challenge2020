@@ -75,7 +75,8 @@
 ```
 각 문장별로 Error Rate를 검사하는 
 mWER(Mean Word Error Rate)를 사용했습니다.
-sum(WERs) / len(Inputs)
+
+mWER = sum(WERs) / len(Inputs)
 ```
 <img width=350 src="images_for_desc/wer.png"/>
 
