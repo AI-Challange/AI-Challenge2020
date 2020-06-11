@@ -41,7 +41,7 @@ Output : Proton
 ```
 평가를 위한 Metric : RMSE(Custom) * weight (각 Time step의 proton value에 비례)
 ```
-<img width=200 src="RMSE_Custom.png"/>
+<img width=300 src="RMSE_Custom.png"/>
 
 ## Commands
 ```
