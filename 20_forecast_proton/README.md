@@ -1,9 +1,24 @@
 # Classification_COVID
 
 ## Task
-ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ \
-Input : SWE, EPM, X-ray \
+```
+태양관측위성으로 수집되는 데이터를 바탕으로 태양입자유입(Proton Flux) 양상 예측 문제
+
+Input : SWE, EPM, X-ray 
 Output : Proton
+```
+## Description
+```
+- 태양의 플레어, 코로나 등에 의해 고에너지 입자가 방출되며, 1시간 ~ 수일 이내에 지구에 도달
+- 이 때, X-ray, SWE, EPM 등의 정보를 양성자(Proton Flux)보다 먼저 관측 할 수 있음
+- 지구에 피해를 줄 우려가 있는 요소는 양성자(Proton Flux)임
+- 양성자의 Traval Time은 유동적임 
+- 각 관측 데이터는 각기 다른 위성에서 수집되었으며, 수집 주기(Time Step)가 다름
+- Proton :5분 / x-ray : 1분 / SWE : 약 1분 / EPM : 약 5분 
+- SWE와 EPM은 수집주기가 유동적임
+
+```
+
 
 ## Dataset
 | Phase | 기간 | Solar Proton Events |
