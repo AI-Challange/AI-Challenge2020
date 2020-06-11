@@ -24,7 +24,7 @@ Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 
 
 ## Data Sample
-<img width=300 src="Sample_Comments.PNG"/>
+<img width=800 src="Sample_Comments.PNG"/>
 
 ```
 (title)  (comment)  (bias)  (hate)
