@@ -6,11 +6,13 @@ Input : SWE, EPM, X-ray \
 Output : Proton
 
 ## Dataset
-| Phase | # |
-| - | - |
-| train | 1998/01/01 ~ 2005/09/09 |
-| validate | 2005/09/10 ~ 2012/07/10 |
-| test | 2012/07/11 ~ 2017/12/31 |
+| Phase | 기간 | 흑점 폭발 횟수 |
+| - | - | - |
+| train | 1998/01/01 ~ 2005/09/09 | 88 |
+| validate | 2005/09/10 ~ 2012/07/10 | 19 |
+| test | 2012/07/11 ~ 2017/12/31 | 20 |
+
+※ 참고 : https://umbra.nascom.nasa.gov/SEP/ (Solar Proton Events Affecting the Earth Environment)
 
 
 ## Data Directory
