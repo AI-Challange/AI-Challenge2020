@@ -27,8 +27,9 @@ Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 <img width=800 src="Sample_Comments.PNG"/>
 
 ```
-(title)  (comment)  (bias)  (hate)
 각 Line의 데이터는 Tab(\t)을 구분자로 사용함
+(title)  (comment)  (bias)  (hate) 
+
 각 카테고리(bias, hate)는 3개의 클래스로 분류됨
 Bias : Gender, Other, None
 Hate : Hate, Offensive, None
