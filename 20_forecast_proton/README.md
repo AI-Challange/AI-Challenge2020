@@ -56,6 +56,8 @@ Output : Proton
 평가를 위한 Metric : RMSE(Custom)
 weight : proton Time Step 기준으로 전체 데이터수/해당 등급 데이터 수
 ```
+<img width=400 src="RMSE(Custom).PNG"/>
+
 | Proton Value | Weight |
 | - | - |
 | 0 ~ 10 | 1 | 
@@ -63,8 +65,6 @@ weight : proton Time Step 기준으로 전체 데이터수/해당 등급 데이�
 | 100 ~ 1000 | 182 |
 | 1000 ~ 10000 | 809 |
 | 10000 ~ | 6041 |
-
-<img width=400 src="RMSE(Custom).PNG"/>
 
 ## Commands
 ```
