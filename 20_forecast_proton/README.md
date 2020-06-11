@@ -57,6 +57,7 @@ Output : Proton
 weight : proton Time Step 기준으로 전체 데이터수/해당 등급 데이터 수
 ```
 | Proton Value | weight |
+| - | - | - |
 | 0~10 | 1 |
 | 10~100 | 68 |
 | 100~1000 | 182 |
