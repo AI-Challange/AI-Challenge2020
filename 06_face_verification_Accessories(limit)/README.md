@@ -2,7 +2,13 @@
 
 ## Task
 ```
-액세서리를 착용한 얼굴 이미지로 착용하지 않은  이미지와의 동일인 여부를 판단하는 문제입니다.
+이 문제에서는 모델 아키텍쳐에 사용 할 수 있는 파라메타가 제한됩니다. (500만개)
+
+다양한 표정, 조명, 각도 환경에서 얼굴 이미지_1(악세사리 착용) 얼굴 이미지_2(악세사리 미착용)의 동일인 여부를 분류(True/False) 하는 문제
+악세사리 : 안경(일반, 뿔테, 선글라스), 모자
+표정 : 무표정, 활짝 웃음, 찡그림
+조명 : 1000, 400, 200, 150, 100 Lux (전체 켜짐)
+각도 : 좌우(-15, 0 , 15도) / 상하 (0도)
 ```
 
 ## Dataset
@@ -72,7 +78,7 @@ F1 score
 액세서리를 착용한 얼굴 1장과 착용하지 않은 얼굴 1장이 한 pair로 주어집니다.(이 때, 조명 밝기와 표정은 랜덤으로 주어짐)
 label은 동일인일 때 0, 동일인이 아닐 때 1로 예측하시면 됩니다.
 
-Baseline code는 siamnetwork로 모델링되어 있으며 이는 자유롭게 변경하여 작성하시면 됩니다.
+Baseline code는 siamese network로 모델링되어 있으며 이는 자유롭게 변경하여 작성하시면 됩니다.
 train data 기준으로 만들 수 있는 최대 Pair의 수는 약 13억 쌍 정도이나 
 모든 쌍을 학습에 사용하지 않고 train 실행 시 학습에 사용할 pair를 만들도록 작성되어 있습니다.
 이 부분 역시 자유롭게 변경하여 사용하실 수 있습니다.
@@ -90,3 +96,12 @@ python main.py --batch=16 --model_name="1.pth" --prediction_dir="prediction" --m
 
 All options in example commands are default value.
 ```
+
+## Submission
+```
+prediction.txt 파일을 제출하시면 됩니다.
+
+prediction.txt 파일은 front image, side image, label 형태입니다.
+label 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
+```
+

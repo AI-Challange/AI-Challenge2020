@@ -2,7 +2,9 @@
 
 ## Task
 ```
-인터넷 뉴스 제목과 댓글 데이터로, 해당 댓글이 악성 댓글인지(편향이나 혐오 성향 유무) 판단하는 문제입니다.
+인터넷 뉴스 제목과 댓글 데이터로, 해당 댓글의 편향, 혐오 를 분류하는 문제
+Input : Title, Comment
+Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 ```
 
 ## Dataset
@@ -10,7 +12,7 @@
 | - | - |
 | train | 7,867 |
 | validate | 500 |
-| test | 0 |
+| test | 511 |
 
 ## Data Directory
 ```
@@ -22,15 +24,20 @@
 
 
 ## Data Sample
-```
-(title)                                                               (comment)                 (bias)     (hate)
-"'미스터 션샤인' 변요한, 김태리와 같은 양복 입고 학당 방문! 이유는?"	김태리 정말 연기잘해 진짜   none	   none
-```
+<img width=800 src="Sample_Comments.PNG"/>
 
+```
+각 Line의 데이터는 Tab(\t)을 구분자로 사용함
+(title)  (comment)  (bias)  (hate) 
+
+각 카테고리(bias, hate)는 3개의 클래스로 분류됨
+Bias : Gender, Other, None
+Hate : Hate, Offensive, None
+```
 
 ## Metric
 ```
-각 클래스(bias, hate)의 F1 Score(weighted) 평균
+각 카테고리(bias, hate)의 F1 Score(weighted) 평균
 ```
 
 
@@ -70,4 +77,12 @@ python main.py --batch=4 --model_name="10.pth" --prediction_file="prediction.txt
 
 
 예시 커맨드에 있는 값은 모두 기본값입니다.
+```
+
+## Submission
+```
+prediction.txt 파일을 제출하시면 됩니다.
+
+prediction.txt 파일은 Title, Comment, Bias, Hate 형태입니다.
+Bias, Hate 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
 ```

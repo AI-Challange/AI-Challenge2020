@@ -10,7 +10,7 @@ For given dark input images, generate bright images
 | - | - |
 | train | 283,337 |
 | validate | 106,331 |
-| test | 105,891 |
+| test | 9,900 |
 
 ## Image Resolution
 ```
@@ -48,11 +48,11 @@ image_name = "Person"_S001_"Illumination"_"Expression"_"Camera_Angle"_cropped.jp
 
 ## Metric
 ```
-The average of L1 Losses 
+The average of L1 Losses of each prediction-answer image pair.
 
-"bright_image_name" always has illumination code "L2"
+L1 Loss is the average of absolute errors of each pixel value pair(between prediction and answer image)
 
-Images that have "L2" are our answer images
+The lights with 400 lux in every direction is used in the answer images.
 
 So we are going to evaluate using them
 ```
@@ -78,5 +78,11 @@ If you have problem with os.mkdir or shutil.rmtree in baseline code, manually re
 
 ## Submission
 ```
-TBD
+Output image file names should be same with input image file names
+
+Make tar.gz file of prediction folder.
+
+tar -zcvf prediction.tar.gz prediction
+
+Submit prediction.tar.gz
 ```

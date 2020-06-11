@@ -2,7 +2,14 @@
 
 ## Task
 ```
-측면 얼굴 이미지로 정면 얼굴 이미지와의 동일인 여부를 판단하는 문제입니다.
+이 문제에서는 모델 아키텍쳐에 사용 할 수 있는 파라메타가 제한됩니다. (500만개)
+
+얼굴 이미지_1(측면 얼굴)과 얼굴 이미지_2(정면 얼굴)의 동일인 여부를 분류(True/False)하는 문제
+측면 조건: -90, -75, -60도 / 60, 75, 90도
+정면 조건: -15, 0, 15도
+상하 조건: 0도 (정면만 사용)
+조도 조건 : 1000, 400, 200, 150, 100 Lux (조명 전체 켜짐)
+악세사리 조건 : 미착용
 ```
 
 ## Dataset
@@ -71,7 +78,7 @@ F1 score
 정면 1장과 측면 1장이 한 pair로 주어집니다.(이 때, 조명 밝기와 표정은 랜덤으로 주어짐)
 label은 동일인일 때 0, 동일인이 아닐 때 1로 예측하시면 됩니다.
 
-Baseline code는 siamnetwork로 모델링되어 있으며 이는 자유롭게 변경하여 작성하시면 됩니다.
+Baseline code는 siamese network로 모델링되어 있으며 이는 자유롭게 변경하여 작성하시면 됩니다.
 train data 기준으로 만들 수 있는 최대 Pair의 수는 약 10억 쌍 정도이나 
 모든 쌍을 학습에 사용하지 않고 train 실행 시 학습에 사용할 pair를 만들도록 작성되어 있습니다.
 이 부분 역시 자유롭게 변경하여 사용하실 수 있습니다.
@@ -88,4 +95,12 @@ python main.py --batch=16 --model_name="1.pth" --prediction_dir="prediction" --m
 
 
 All options in example commands are default value.
+```
+
+## Submission
+```
+prediction.txt 파일을 제출하시면 됩니다.
+
+prediction.txt 파일은 front image, side image, label 형태입니다.
+label 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
 ```

@@ -4,9 +4,10 @@ import torch.nn as nn
 import torch
 from torch.utils import data
 from PIL import Image
+import os
 
 
-def evaluate(prediction_dir, labels, cuda):
+def evaluate(prediction_dir, labels, cuda, validate_label):
     loss_fn = nn.L1Loss()
     if cuda:
         loss_fn = loss_fn.cuda()
@@ -14,8 +15,8 @@ def evaluate(prediction_dir, labels, cuda):
 
     for index, [pred_image, answer_image] in enumerate(labels):
 
-        pred_image = Image.open(prediction_dir + '/' + pred_image)
-        answer_image = Image.open('data/validate/' + answer_image)
+        pred_image = Image.open(os.path.join(prediction_dir, pred_image))
+        answer_image = Image.open(os.path.join(os.path.dirname(validate_label), answer_image))
 
         pred_image = np.asarray(pred_image, dtype=float)
         answer_image = np.asarray(answer_image, dtype=float)
@@ -51,7 +52,7 @@ def read_validate_label(file_name):
 def evaluation_metrics(prediction_dir, validate_label, cuda):
     v_labels = read_validate_label(validate_label)
 
-    return evaluate(prediction_dir, v_labels, cuda)
+    return evaluate(prediction_dir, v_labels, cuda, validate_label)
 
 
 if __name__ == '__main__':
