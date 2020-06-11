@@ -78,3 +78,11 @@ python main.py --batch=4 --model_name="10.pth" --prediction_file="prediction.txt
 
 예시 커맨드에 있는 값은 모두 기본값입니다.
 ```
+
+## Submission
+```
+prediction.txt 파일을 제출하시면 됩니다.
+
+prediction.txt 파일은 Title, Comment, Bias, Hate 형태입니다.
+Bias, Hate 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
+```
