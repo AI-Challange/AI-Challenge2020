@@ -24,15 +24,19 @@ Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 
 
 ## Data Sample
-```
-(title)                                                               (comment)                 (bias)     (hate)
-"'미스터 션샤인' 변요한, 김태리와 같은 양복 입고 학당 방문! 이유는?"	김태리 정말 연기잘해 진짜   none	   none
-```
+<img width=300 src="Sample_Comments.PNG"/>
 
+```
+(title)  (comment)  (bias)  (hate)
+각 Line의 데이터는 Tab(\t)을 구분자로 사용함
+각 카테고리(bias, hate)는 3개의 클래스로 분류됨
+Bias : Gender, Other, None
+Hate : Hate, Offensive, None
+```
 
 ## Metric
 ```
-각 클래스(bias, hate)의 F1 Score(weighted) 평균
+각 카테고리(bias, hate)의 F1 Score(weighted) 평균
 ```
 
 
