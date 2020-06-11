@@ -6,7 +6,7 @@ Input : SWE, EPM, X-ray \
 Output : Proton
 
 ## Dataset
-| Phase | 기간 | 흑점 폭발 횟수 |
+| Phase | 기간 | Solar Proton Events |
 | - | - | - |
 | train | 1998/01/01 ~ 2005/09/09 | 88 |
 | validate | 2005/09/10 ~ 2012/07/10 | 19 |
@@ -40,6 +40,7 @@ Output : Proton
 ## Metric
 ```
 평가를 위한 Metric : RMSE(Custom) * weight (각 Time step의 proton value에 비례)
+<img width=200 src="RMSE_Custom.png"/>
 ```
 
 수식 이미지 제시
