@@ -2,7 +2,7 @@
 
 ## Task
 ```
-인터넷 뉴스 제목과 댓글 데이터로, 해당 댓글이 악성 댓글인지(편향, 혐오 유무) 분류하는 문제
+인터넷 뉴스 제목과 댓글 데이터로, 해당 댓글의 편향, 혐오 를 분류하는 문제
 Input : Title, Comment
 Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 ```
