@@ -15,8 +15,7 @@ Output : Proton
 - 양성자의 Traval Time은 유동적임 
 - 각 관측 데이터는 각기 다른 위성에서 수집되었으며, 수집 주기(Time Step)가 다름
 - Proton :5분 / x-ray : 1분 / SWE : 약 1분 / EPM : 약 5분 
-- SWE와 EPM은 수집주기가 유동적임
-
+- SWE와 EPM은 수집주기가 다소 변동적임
 ```
 
 
