@@ -10,7 +10,7 @@ For given dark input images, generate bright images
 | - | - |
 | train | 283,337 |
 | validate | 106,331 |
-| test | 105,891 |
+| test | 9,900 |
 
 ## Image Resolution
 ```
