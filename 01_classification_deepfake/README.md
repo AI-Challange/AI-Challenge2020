@@ -2,10 +2,11 @@
 
 ## Task
 주어진 안면 이미지의 진짜, 가짜 여부를 분류하는 문제\
-Input : 안면 이미지(112x112x3)\
+Input : 안면 이미지\
 Output : 진짜, 가짜 여부(real: 0, fake: 1)
 
 ## Dataset
+### image resolution 112x112x3
 | Phase | # |
 | - | - |
 | train | 240000 |
