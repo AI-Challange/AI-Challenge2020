@@ -68,6 +68,10 @@ Word Error Rate (WER)
 
 띄어쓰기 단위로 분리한 정답과 예측값의 sequence를 비교하여 insertions(I), deletions(D), substitutions(S)를 구한 뒤 아래와 같은 식을 적용합니다.
 
+Insertion (I): Words that are incorrectly added in the predicted sequence.
+Deletion (D): Words that are undetected in the predicted sequence.
+Substitution (S): Words that were substituted between answer and predicted sequence.
+
 맞춘 단어의 수를 C라고 했을 때, N은 C + S + D입니다.
 
 자세한 설명은 evaluation 코드와 https://en.wikipedia.org/wiki/Word_error_rate 를 참고하시면 됩니다.
