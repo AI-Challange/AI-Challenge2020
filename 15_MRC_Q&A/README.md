@@ -55,7 +55,10 @@
         }
     ],
     "source": 6
-},
+}
+
+제목(title), 본문의 카테고리(source), 본문(context), 질문 번호(id), 육하원칙(classtype)
+질문(question), 정답의 시작위치(answer_start), 정답(text)
 ```
 
 
