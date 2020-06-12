@@ -113,3 +113,32 @@ prediction.json을 제출하시면 됩니다.
 
 prediction.json은 {"id": "answer_string", "id": "answer_string", ...} 형태입니다.
 ```
+
+## Materials
+```
+Baseline 코드에 기본적인 모델도 들어가 있지 않기 때문에, 참고할 만한 자료들의 링크를 제공합니다.
+
+
+BERT
+
+https://github.com/google-research/bert
+
+
+Ai NLP Challenge
+
+https://challenge.enliple.com/
+
+https://github.com/enlipleai/kor_pretrain_LM
+
+
+HanBert
+
+https://twoblockai.com/2020/01/22/hanbert%EB%A5%BC-%EA%B3%B5%EA%B0%9C%ED%95%A9%EB%8B%88%EB%8B%A4/
+
+
+Pytorch Transformers
+
+https://pytorch.org/hub/huggingface_pytorch-transformers/
+
+https://github.com/huggingface/transformers
+```
