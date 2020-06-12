@@ -8,7 +8,7 @@ class Net(torch.nn.Module):
         super(Net, self).__init__()
 
         self.fc = nn.Sequential(
-            nn.Linear(43682, 500),
+            nn.Linear(45525, 500),
             nn.Linear(500, num_classes),
             nn.ReLU(inplace=True))
 
