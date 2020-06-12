@@ -38,22 +38,55 @@ Output : Proton
 ```
 \_data
     \_ train
-        \_ 0.png , 1.png, 2.png ..., train_label_COVID.txt and train_label_COVID.xlsx
+        \_ train_AC_H0_SWE.csv, train_AC_H1_EPM.csv, train_proton.csv, train_xray.csv
     \_ validate
-        \_ 0.png , 1.png, 2.png ..., validate_label_COVID.txt and validate_label_COVID.xlsx
+        \_ val_AC_H0_SWE.csv, val_AC_H1_EPM.csv, val_proton.csv, val_xray.csv
     \_ test
-        \_ 0.png , 1.png, 2.png ..., test_label_COVID.txt and test_label_COVID.xlsx        
+        \_ test_AC_H0_SWE.csv, test_AC_H1_EPM.csv, test_proton.csv, test_xray.csv
 
 ```
 
 ## Data Sample
+# SWE
+time_tag	                H_DENSITY_#/cc	SW_H_SPEED_km/s
+ 2005-09-11T00:00:53.000Z	    -100	        -100
+ 2005-09-11T00:01:57.000Z	    -100	        -100
+                            .
+                            .
+ 2007-02-14T19:03:06.000Z      	2.8289	        674.1
+ 2007-02-14T19:04:10.000Z	    3.1459	        669.26
 
-이미지로 예시
+
+# EPM
+time_tag	P1P_.047-.066MEV_IONS_1/(cm**2-s-sr-MeV) ... P8P_1.89-4.75MEV_IONS_1/(cm**2-s-sr-MeV)
+ 2005-09-11T00:01:00.000Z	152870	48966	33411	23198	17091	12280	7512.8	2836
+ 2005-09-11T00:06:00.000Z	161880	56622	39165	26999	19946	13861	8183.1	2946.3
+ 2005-09-11T00:11:00.000Z	156540	54534	38960	27481	20267	14088	8352.8	3000.3
+                    .
+                    .
+
+# xray
+time_tag	            xs	      xl
+2005-09-11 00:00.0	   -100      -100
+2005-09-11 01:00.0	   -100	     -100
+                    .
+                    .
+2007-03-15 18:09	4.78E-09	3.73E-09
+2007-03-15 18:10	4.78E-09	3.73E-09
+
+
 
 ## Label Sample
-
-
-이미지로 예시
+# Proton
+time_tag	proton
+00:00.0	-100
+05:00.0	955
+10:00.0	1010
+15:00.0	1050
+20:00.0	1000
+25:00.0	1090
+   .
+   .
 
 
 ## Metric
