@@ -47,7 +47,9 @@ Output : Proton
 ```
 
 ## Data Sample
-# SWE
+```
+SWE
+
 time_tag	                H_DENSITY_#/cc	SW_H_SPEED_km/s
  2005-09-11T00:00:53.000Z	    -100	        -100
  2005-09-11T00:01:57.000Z	    -100	        -100
@@ -55,7 +57,7 @@ time_tag	                H_DENSITY_#/cc	SW_H_SPEED_km/s
                             .
  2007-02-14T19:03:06.000Z      	2.8289	        674.1
  2007-02-14T19:04:10.000Z	    3.1459	        669.26
-
+```
 
 # EPM
 time_tag	P1P_.047-.066MEV_IONS_1/(cm**2-s-sr-MeV) ... P8P_1.89-4.75MEV_IONS_1/(cm**2-s-sr-MeV)
