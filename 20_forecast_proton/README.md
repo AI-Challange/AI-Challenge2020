@@ -16,8 +16,9 @@ Output : Proton
 - 각 관측 데이터는 수집 주기(Time Step)가 다름
 - Proton :5분 / x-ray : 1분 / SWE : 약 1분 / EPM : 약 5분 
 - SWE와 EPM은 수집주기가 다소 변동적임
-- 데이터 값중 -100은 Noise 값이며 baseline에서 0으로 변환
-- Proton의 값 중 -100은 Noise 값이며 이 값에 대한 예측은 하지 않는다.
+- Input Data(X-ray, SWE, EPM) 중 -100은 위성의 고장으로 인해 해당 데이터가 관측이 되지 않았다는 메세지입니다. 
+  (Baseline에서는 임의로 0으로 변환합니다. 해당 Empty Cell의 데이터를 추정, 예측하여 Output에 반영한느 것 또한 참가자의 능력으로 평가합니다.)
+- Output Data(Proton) 중 -100은 위성의 고장으로 인해 해당 데이터가 관측이 되지 않앗다는 메시지니다.  해당 Step은 평가에서 제외됩니다.
 
 태양으로부터 관측되는 데이터는 매 사건마다 Traval Time이 다를 수 있어 관측되기 까지의 시간/ 혹은 영향을 주는 기간이 다를 수 있으며, 
 각 데이터의 관측 주기도 다르니 참고바랍니다.
@@ -122,6 +123,7 @@ python main.py --model_name="1" --mode="test"
 ```
 
 ## Reference
+본 문제에서는 베이스라인에서 특정 모델 아키텍쳐를 제공하지 않습니다.
+(데이터들의 시관관계 맵핑  사용자의 능력으로 평가하기 위함합니다.)
+RNN Model Architecture : https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection
 
-forecast github
-https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection
