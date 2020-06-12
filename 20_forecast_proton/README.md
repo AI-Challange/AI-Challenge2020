@@ -120,3 +120,8 @@ python main.py --model_name="1" --mode="test"
 모든 옵션은 default value가 있음
 옵션은 main.py 파일 참고
 ```
+
+## Reference
+
+forecast github
+https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection
