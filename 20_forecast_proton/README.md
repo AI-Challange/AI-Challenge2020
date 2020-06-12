@@ -25,9 +25,9 @@ Output : Proton
 ## Dataset
 | Phase | 기간 | Solar Proton Events |
 | - | - | - |
-| train | 1998/01/01 ~ 2005/09/09 | 88 |
-| validate | 2005/09/10 ~ 2012/07/10 | 19 |
-| test | 2012/07/11 ~ 2017/12/31 | 20 |
+| train | 1998/02/04 ~ 2005/09/10 | 88 |
+| validate | 2005/09/11 ~ 2012/07/11 | 19 |
+| test | 2012/07/12 ~ 2017/12/31 | 20 |
 
 ※ 참고 : https://umbra.nascom.nasa.gov/SEP/ (Solar Proton Events Affecting the Earth Environment)
 
