@@ -2,94 +2,29 @@
 
 ## Task
 ```
-교통량 예측
+각 고속도로(35개)의 1시간 단위 교통량 데이터를 제공하며,
+
 ```
 
 ## Dataset
 | Phase | # |
 | - | - |
-| train | 38,013 |
-| validate | 8,146 |
-| test | 8,147 |
-
-
-## Image Resolution
-```
-256 * 256
-```
+| train | 2020.01.01 ~ 05.01 |
+| validate | 2020.04.17 ~ 05.16 |
+| test | 2020.05.17 ~ 05.31 |
 
 
 ## Data Directory
 ```
 \_data
     \_ data.csv
+    수정ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
 ```
 
 ## Data Sample
 ```
+ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
 ```
-
-## Data Sample
-
-
-## Label
-```
-# train_labels.txt
-
-cd7bc55c-1c47-4af7-9875-f29147d54115___FREC_Scab_3471.JPG 0 0
-
-(File_name) (Plant_Label) (Disease_Label)
-```
-
-
-## Metric
-```
-The average of Custom Hamming Loss for plants and Custom Hamming Loss for deseases
-
-Below is the expression
-
-(D is the set of data)
-```
-<img width=500 src="images_for_desc/custom_hamming_loss.png"/>
-
-
-## Description
-```
-The prediction file should include 2 labels distinguished by whitespace like label files line by line. 
-
-The Baseline model doesn't predict 'plant and disease labels' seperately, but 'plant with disease'(combined) label like solving single-label problem. 
-
-So baseline code provides conversion dictonary and function(single-label to multi-label, multi-label to single-label)
-
-Therefore loss function in baseline code also use single combined label as parameter
-
-ex) 
-(Grape, Black_rot) = (4, 2) -> Grape___Black_rot = 11
-```
-
-
-## Commands
-```
-# train
-python main.py --lr=0.001 --cuda=True --num_epochs=10 --print_iter=10 --prediction_file="prediction.txt" --batch=4 --mode="train"
-
-# test (for submission)
-python main.py --batch=4 --model_name="1.pth" --prediction_file="prediction.txt" --mode="test"
-
-
-All options in example commands are default value.
-```
-
-
-## Submission
-```
-Submit your prediction.txt
-
-The format of each line in text file is "filename plant_label disease_label"
-
-ex) filename.JPG 9 15
-```
-
 
 ## 도로 코드
 |코드|도로명|
@@ -147,3 +82,44 @@ ex) filename.JPG 9 15
 |4510|중부내륙지선|
 |5510|중앙선지선|
 |6000|부산외곽선|
+
+
+## Label
+```
+# train_labels.txt
+
+cd7bc55c-1c47-4af7-9875-f29147d54115___FREC_Scab_3471.JPG 0 0
+
+(File_name) (Plant_Label) (Disease_Label)
+```
+
+
+## Metric
+```
+평가를 위한 Metric : RMSE_Custom
+```
+<img width=500 src="RMSE(Custom).png"/>
+
+
+
+## Commands
+```
+# train
+python main.py 
+
+# test 
+python main.py --batch=4 --model_name="1.pth" --mode="test"
+
+
+All options in example commands are default value.
+```
+
+
+## Submission
+```
+Submit your prediction.txt
+
+The format of each line in text file is "filename plant_label disease_label"
+
+ex) filename.JPG 9 15
+```
