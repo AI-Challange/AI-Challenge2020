@@ -9,14 +9,19 @@ Output : Proton
 ```
 ## Description
 ```
-- 태양의 플레어, 코로나 등에 의해 고에너지 입자가 방출되며, 1시간 ~ 수일 이내에 지구에 도달
-- 이 때, X-ray, SWE, EPM 등의 정보를 양성자(Proton Flux)보다 먼저 관측 할 수 있음
-- 지구에 피해를 줄 우려가 있는 요소는 양성자(Proton Flux)임
-- 양성자의 Traval Time은 유동적임 
-- 각 관측 데이터는 수집 주기(Time Step)가 다름
-- Proton : 5분 / x-ray : 1분 / SWE : 약 1분 / EPM : 약 5분 
+- 고에너지 입자는 태양의 플레어, 코로나 등에 의해 방출되며, 수 시간 ~ 수 일 이내에 지구에 도달
+- 고에너지 입자 방출로 인해 지구로 유입되는 양성자(Proton Flux)가 증가하면 위성장애, 극지역 HF통신 및 항법시스템 장애 등을 야기함 
+- X-ray는 플레어와 관련되어 있으며, SWE, EPM은 코로나와 관련되어 있으며, 양성자(Proton Flux)의 변화와 관련성이 있음
+  (데이터 관측 순서 : X-ray > Proton flux > EPM, SWE ) 
+- Proton : 지구 정지궤도에 있는 미국 GOES 위성에서 관측된 10MeV 이상 Proton flux의 5분 평균값
+- X-ray : 지구 정지궤도에 있는 미국 GOES 위성에서 관측된 x-ray의 1분 평균값
+- SWE : 지구에서 태양방향으로 150만 km 떨어진 위치의 ACE 위성에서 관측된, 태양에서 불어오는 태양풍의 밀도와 속도의 1분 평균값
+- EPM : 지구에서 태양방향으로 150만 km 떨어진 위치의 ACE 위성에서 관측된, 코로나물질방출에 의해 생성되는 고에너지 양성자와 전자 밀도의 5분 평균값
+  (에너지 크기별 8개로 나뉘어 측정(0.047~0.066MeV, ~0.114MeV, ~0.190MeV, ~0.310MeV, ~0.580MeV, ~1.05MeV, ~1.89MeV, ~4.75MeV ))
+- 양성자의 Traval Time은 태양 플레어, 코로나물질방출의 발생 위치, 방향 등에 따라 유동적임
+- 각 관측 데이터는 수집 주기(Time Step)가 다름 (Proton : 5분 / x-ray : 1분 / SWE : 약 1분 / EPM : 약 5분)
 - SWE와 EPM은 수집주기가 다소 변동적임
-- Input Data(X-ray, SWE, EPM) 중 -100은 위성의 고장으로 인해 해당 데이터가 관측이 되지 않았다는 메세지입니다. 
+- Input Data(X-ray, SWE, EPM) 중 -100은 위성의 고장으로 인해 해당 데이터가 관측이 되지 않았다는 메세지임. 
   (Baseline에서는 임의로 0으로 변환합니다. 해당 Empty Cell의 데이터를 추정, 예측하여 Output에 반영하는 것 또한 참가자의 Skill로 합니다.)
 - Output Data(Proton) 중 -100은 위성의 고장으로 인해 해당 데이터가 관측이 되지 않았다는 메시지입니다. 따라서 해당 Step은 평가에서 제외됩니다.
 
@@ -28,8 +33,8 @@ Output : Proton
 ## Dataset
 | Phase | 기간 | Solar Proton Events |
 | - | - | - |
-| train | 1998/02/04 ~ 2005/09/10 | 87 |
-| validate | 2005/09/11 ~ 2012/07/11 | 25 |
+| train | 1998/02/04 ~ 2005/09/10 | 88 |
+| validate | 2005/09/11 ~ 2012/07/11 | 18 |
 | test | 2012/07/12 ~ 2017/12/31 | 26 |
 
 ※ 참고 : https://umbra.nascom.nasa.gov/SEP/ (Solar Proton Events Affecting the Earth Environment)
