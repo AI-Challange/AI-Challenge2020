@@ -2,7 +2,12 @@
 
 ## Task
 ```
-각 고속도로(35개)의 1시간 단위 교통량 데이터를 제공하며,
+이전 기간동안 35개 도로의 교통량과, 예측 기간동안 10개 도로의 교통량을 기반으로 25개 도로의 교통량 예측
+
+각 고속도로(전체 35개)의 1시간 단위 교통량 데이터 제공.
+ - 10개 고속도로의 교통량 데이터는 전체 기간을 제공하며,
+ - 25개 고속도로의 교통량 데이터는 일부 기간만 제공됨.
+
 
 ```
 
@@ -11,7 +16,11 @@
 | - | - |
 | train | 2020.01.01 ~ 05.01 |
 | validate | 2020.04.17 ~ 05.16 |
-| test | 2020.05.17 ~ 05.31 |
+| test | 2020.05.02 ~ 05.31 |
+<img width=500 src="Data_split.png"/>
+```
+참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
+```
 
 
 ## Data Directory
@@ -84,21 +93,13 @@
 |6000|부산외곽선|
 
 
-## Label
-```
-# train_labels.txt
-
-cd7bc55c-1c47-4af7-9875-f29147d54115___FREC_Scab_3471.JPG 0 0
-
-(File_name) (Plant_Label) (Disease_Label)
-```
-
 
 ## Metric
 ```
 평가를 위한 Metric : RMSE_Custom
 ```
 <img width=500 src="RMSE(Custom).png"/>
+
 
 
 
@@ -115,11 +116,4 @@ All options in example commands are default value.
 ```
 
 
-## Submission
-```
-Submit your prediction.txt
 
-The format of each line in text file is "filename plant_label disease_label"
-
-ex) filename.JPG 9 15
-```
