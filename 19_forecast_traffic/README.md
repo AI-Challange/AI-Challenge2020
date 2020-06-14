@@ -17,7 +17,7 @@
 | train | 2020.01.01 ~ 05.01 |
 | validate | 2020.04.17 ~ 05.16 |
 | test | 2020.05.02 ~ 05.31 |
-<img width=500 src="Data_split.png"/>
+<img width=600 src="Data_split.png"/>
 ```
 참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
 ```
