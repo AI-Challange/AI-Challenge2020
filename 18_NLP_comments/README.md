@@ -37,7 +37,7 @@ Hate : Hate, Offensive, None
 ```
 
 ## Metric
-<img width=500 src="metric.png"/>
+<img width=600 src="metric.png"/>
 
 ## Description
 ```
