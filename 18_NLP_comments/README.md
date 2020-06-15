@@ -42,7 +42,7 @@ Hate : Hate, Offensive, None
 
 F1_result = (F1_bias + F1_hate) / 2
 
-F1_category = 2 * (precision * recall) / (precision + recall)
+F1_category = 2 * (precision * recall) / (precision + recall) * Weight
 ```
 
 
