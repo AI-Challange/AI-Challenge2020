@@ -40,7 +40,7 @@ Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-
 
 ## Metric
 ```
-평가를 위한 Metric : RMSE_Custom
+평가를 위한 Metric : RMSLE
 ```
 <img width=450 src="Image/RMSE_Custom.png"/>
 
