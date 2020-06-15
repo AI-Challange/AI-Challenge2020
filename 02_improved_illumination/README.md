@@ -52,7 +52,7 @@ The average of L1 Losses of each prediction-answer image pair.
 
 L1 Loss is the average of absolute errors of each pixel value pair(between prediction and answer image)
 
-The lights with 400 lux in every direction is used in the answer images.
+The lights with 400 lux in every directions are illuminated in the answer images.
 
 So we are going to evaluate using them
 ```
