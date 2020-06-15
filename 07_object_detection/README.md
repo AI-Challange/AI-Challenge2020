@@ -11,7 +11,7 @@ Output : 도로 이미지내의 장애물 클래스와 Confidence, 좌상단, �
 * image height = 540, width = 960, channel = 3
 
 
-| Phase | Image | Lable |
+| Phase | Image | Labe |
 | - | - | - |
 | train | image: 309,562 | xml_file: 1 |
 | validate | image: 22,742 | xml_file: 1 |
