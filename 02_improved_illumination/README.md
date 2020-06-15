@@ -59,7 +59,7 @@ So we are going to evaluate using them
 
 ## Description
 ```
-For given image, baseline model just do convolutions and decovolutions generating new image that has original image size
+For given image, baseline model just applies convolutions and decovolutions generating new images that have 112 * 112 size.
 ```
 
 ## Commands
