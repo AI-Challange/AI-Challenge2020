@@ -1,6 +1,6 @@
 # AI-Challenge2020
 
-
+<img width=600 src="mina_page.png"/> 
 
 ## 공지사항 및 Q&A
 ```
