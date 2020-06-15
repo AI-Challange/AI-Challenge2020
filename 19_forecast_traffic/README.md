@@ -17,7 +17,7 @@
 | test | 2020.05.02 ~ 05.31 |
 
 Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-999로 표기됨)
-<img width=600 src="Image/Data_split.png"/>
+<img width=600 src="Image/Sample_Dataset.png"/>
 ```
 참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
 ```
