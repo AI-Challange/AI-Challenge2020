@@ -76,7 +76,7 @@ Substitution (S): Words that were substituted between answer and predicted seque
 
 자세한 설명은 evaluation 코드와 https://en.wikipedia.org/wiki/Word_error_rate 를 참고하시면 됩니다.
 ```
-<img width=350 src="images_for_desc/wer.png"/>
+<img width=350 src="images_for_desc/WER.png"/>
 
 ## Description
 ```
