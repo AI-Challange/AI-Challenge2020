@@ -4,7 +4,7 @@
 ```
 도로 사진을 입력으로, 사용자의 보행에 장애물이 될 Object를 Detection
 Input : 도로 이미지
-Output : 도로 이미지내의 장애물 클래스와 Confidence, 좌상단, 우한단 좌표
+Output : 도로 이미지내의 장애물 클래스와 Confidence, 좌상단, 우하단 좌표
 ```
 309562/22742/17411 
 ## Dataset
