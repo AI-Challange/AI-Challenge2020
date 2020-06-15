@@ -8,12 +8,11 @@ Image segmentation 노면 이미지에서 각 영역을 분할하는 문제
 ## Dataset
 * image height = 1080, width = 1920, channel = 3
 
-| train | image: 32,467 | mask_image: 32,467 | xml_file: 540 |
-
-| validate | image: 7,028 | mask_image: 7,028 | xml_file: 124 |
-
-| test | image: 6,904 | mask_image: 6,857 | xml_file: 136 |
-
+| Phase | num of image | num of mask_image | label_format |
+| - | - | - | - |
+| train | 32,467 | 32,467 | xml_file: 540 |
+| validate |  7,028 | 7,028 | xml_file: 124 |
+| test | 6,904 | 6,857 | xml_file: 136 |
 
 ## Data Directory
 ```
