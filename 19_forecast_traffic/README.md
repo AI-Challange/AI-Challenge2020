@@ -1,4 +1,4 @@
-# Forcast Traffic
+# Forecast Traffic
 
 ## Task
 ```
