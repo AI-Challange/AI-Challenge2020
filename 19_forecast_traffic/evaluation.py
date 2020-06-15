@@ -20,7 +20,7 @@ def read_test_file(file_name):
     lines = f.readlines()
     
     result = []
-    for line in lines[362:]:
+    for line in lines[-360:]:
         line = line.strip().split(',')
         for idx in label_index_pool:
             result.append(float(line[idx + 2]))
@@ -37,7 +37,7 @@ def read_prediction_file(file_name):
     for line in lines:
         line = [float(x) for x in line.strip().split()]
         result.extend(line)
-
+    
     f.close()
     return result
 
