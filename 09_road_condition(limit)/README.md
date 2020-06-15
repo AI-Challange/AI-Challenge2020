@@ -1,8 +1,10 @@
-# Surface segmentation
+# Surface segmentation (Limit)
 
 ## Task
 ```
-Image segmentation
+Image segmentation 노면 이미지에서 각 영역을 분할하는 문제
+
+(모델 파라미터 수 15,000,000 (15M) 제한)
 ```
 
 ## Dataset

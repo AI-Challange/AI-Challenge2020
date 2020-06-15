@@ -27,10 +27,11 @@ Output : Bias(Gender, Other, None), Hate(Hate, Offensive, None)
 <img width=800 src="Sample_Comments.PNG"/>
 
 ```
-각 Line의 데이터는 Tab(\t)을 구분자로 사용함
 (title)  (comment)  (bias)  (hate) 
 
-각 카테고리(bias, hate)는 3개의 클래스로 분류됨
+각 Line의 데이터는 Tab(\t)을 구분자로 사용
+
+각 카테고리(bias, hate)는 3개의 클래스로 분류
 Bias : Gender, Other, None
 Hate : Hate, Offensive, None
 ```
@@ -48,10 +49,12 @@ Hate : Hate, Offensive, None
  - Gender : 성적 지향성, 성 정체성, 성별에 따른 역할이나 능력에 대한 편견
  - Others : 성별 외 인종이나 출신 지역, 피부색, 종교, 장애, 직업 등에 대한 편견
  - None : 편견 존재하지 않음
+ 
 ※ Hate
  - Hate : 대상을 심하게 비난하거나 깎아내려서 정신적인 고통 등을 야기할 수 있는 표현
  - Offensive : 모욕이나 혐오에는 미치지 않지만 공격적이고 무례한 내용
  - None : 모욕이나 공격성 존재하지 않음
+ 
 ※ 이외 labeling에 대한 상세 사항 : https://www.notion.so/c1ecb7cc52d446cc93d928d172ef8442
 
 [vocab 관련]
