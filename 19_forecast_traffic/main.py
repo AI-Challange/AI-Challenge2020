@@ -39,53 +39,32 @@ def _infer(model, cuda, data_loader):
     return list(res_pred)
 
 
-def feed_infer(output_file, source_file, infer_func):
+def feed_infer(output_file, infer_func):
     prediction = infer_func()
-    label_index_pool = [2, 3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 25, 26, 27, 28, 30, 32, 33, 34]
 
     print('write output')
 
-    split_index = 362
-
     output = open(output_file, 'w', encoding='utf-8-sig', newline='')
-    writer = csv.writer(output)
 
-    source = open(source_file, 'r', encoding='utf-8-sig')
-    
-    for _ in range(split_index):
-        writer.writerow(source.readline().strip().split(','))
-
-
-    for pred in prediction:
-        pred_line = source.readline().strip().split(',')
-        if len(pred_line) < 2:
-            break
-        
-        # print(pred)
-        for idx, label_idx in enumerate(label_index_pool):
-            # print(idx, label_idx)
-            temp = pred[idx]
-            pred_line[label_idx + 2] = temp
-        
-        writer.writerow(pred_line)
+    for pred in prediction[360:]:
+        output.write(' '.join([str(x) for x in pred]) + '\n')
     
     output.close()
-    source.close()
 
     if os.stat(output_file).st_size == 0:
         raise AssertionError('output result of inference is nothing')
 
 
 def validate(prediction_file, model, validate_dataloader, validate_label_file, cuda):
-    feed_infer(prediction_file, validate_label_file, lambda : _infer(model, cuda, data_loader=validate_dataloader))
+    feed_infer(prediction_file, lambda : _infer(model, cuda, data_loader=validate_dataloader))
 
     metric_result = evaluation_metrics(prediction_file, validate_label_file)
     print('Eval result: {:.4f}'.format(metric_result))
     return metric_result
 
 
-def test(prediction_file_name, model, test_dataloader, test_file, cuda):
-    feed_infer(prediction_file, test_file, lambda : _infer(model, cuda, data_loader=test_dataloader))
+def test(prediction_file_name, model, test_dataloader, cuda):
+    feed_infer(prediction_file, lambda : _infer(model, cuda, data_loader=test_dataloader))
 
 
 def save_model(model_name, model, optimizer, scheduler):
@@ -116,7 +95,7 @@ if __name__ == '__main__':
     args.add_argument("--num_epochs", type=int, default=100)
     args.add_argument("--print_iter", type=int, default=10)
     args.add_argument("--model_name", type=str, default="model.pth")
-    args.add_argument("--prediction_file", type=str, default="prediction.csv")
+    args.add_argument("--prediction_file", type=str, default="prediction.txt")
     args.add_argument("--batch", type=int, default=4)
     args.add_argument("--mode", type=str, default="train")
 
@@ -208,6 +187,6 @@ if __name__ == '__main__':
         model.eval()
         # get data loader
         test_dataloader, test_file = data_loader(root=DATASET_PATH, phase='test', batch_size=batch)
-        test(prediction_file, model, test_dataloader, test_file, cuda)
+        test(prediction_file, model, test_dataloader, cuda)
         # submit test result
         
