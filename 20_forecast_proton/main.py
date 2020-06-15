@@ -18,6 +18,7 @@ try:
 except:
     DATASET_PATH = os.path.join('./data')
 
+# 음수의 정답을 가진 데이터를 제외합니다.
 def handler(datas, labels, device) :
     new_datas = []
     new_labels = []
