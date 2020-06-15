@@ -9,7 +9,7 @@
  - 25개 고속도로의 교통량 데이터는 예측기간을 제외한 기간만 제공
 ```
 
-## Dataset
+## Dataset(Sample)
 | Phase | # |
 | - | - |
 | train | 2020.01.01 ~ 05.01 |
@@ -19,6 +19,12 @@
 Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-999로 표기됨)
 <img width=600 src="Image/Sample_Dataset.png"/>
 ```
+****** 제공되는 Dataset 기간은 Sample입니다. ******
+Sequence Data임을 고려하여, 참가자가 원하는 크기의 Window를 사용 할 수 있도록 Dataset을 Concat 등으로 연결, 조합하는 것이 허용됩니다.
+
+
+
+
 참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
 ```
 
