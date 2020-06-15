@@ -7,8 +7,6 @@
 각 고속도로(전체 35개)의 1시간 단위 교통량 데이터 제공.
  - 10개 고속도로의 교통량 데이터는 전체 기간을 제공하며,
  - 25개 고속도로의 교통량 데이터는 일부 기간만 제공됨.
-
-
 ```
 
 ## Dataset
@@ -34,7 +32,7 @@
 ## Data Sample
 <img width=800 src="Image/Sample_1.PNG"/>
 
-참고 : 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음
+참고 : Test Dataset의 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음
 <img width=800 src="Image/Sample_2.PNG"/>
 
 
@@ -43,8 +41,6 @@
 평가를 위한 Metric : RMSE_Custom
 ```
 <img width=450 src="Image/RMSE(Custom).png"/>
-
-
 
 
 ## Commands
