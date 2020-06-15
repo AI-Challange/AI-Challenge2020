@@ -4,14 +4,13 @@ import numpy as np
 import argparse
 
 
-def RMSE(gt_value, pred_value):
+def RMSLE(gt_value, pred_value):
     sum_error = 0
     length = len(gt_value)
     for i in range(length):
-        sum_error += (gt_value[i] - pred_value[i]) ** 2
+        sum_error += (math.log(gt_value[i] + 1) - math.log(pred_value[i] + 1)) ** 2
     sum_error = float(sum_error / length)
-    sum_error = sum_error ** 0.5 + 1
-    sum_error = math.log(sum_error)
+    sum_error = sum_error ** 0.5
     return sum_error
 
 
@@ -34,7 +33,7 @@ def evaluation_metrics(prediction_file, test_file):
     prediction_labels = read_file(prediction_file)
     gt_labels = read_file(test_file)
 
-    return RMSE(prediction_labels, gt_labels)    
+    return RMSLE(prediction_labels, gt_labels)    
 
 
 if __name__ == '__main__':
