@@ -17,7 +17,7 @@
 | train | 2020.01.01 ~ 05.01 |
 | validate | 2020.04.17 ~ 05.16 |
 | test | 2020.05.02 ~ 05.31 |
-<img width=600 src="Data_split.png"/>
+<img width=600 src="Image/Data_split.png"/>
 ```
 참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
 ```
@@ -26,14 +26,16 @@
 ## Data Directory
 ```
 \_data
-    \_ data.csv
-    수정ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
+    \_ train.csv
+    \_ validate.csv
+    \_ test.csv
 ```
 
 ## Data Sample
-```
-ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
-```
+<img width=600 src="Image/Sample_1.PNG"/>
+
+참고 : 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음
+<img width=600 src="Image/Sample_2.PNG"/>
 
 ## 도로 코드
 |코드|도로명|
@@ -98,7 +100,7 @@
 ```
 평가를 위한 Metric : RMSE_Custom
 ```
-<img width=500 src="RMSE(Custom).png"/>
+<img width=500 src="Image/RMSE(Custom).png"/>
 
 
 
