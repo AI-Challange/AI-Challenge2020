@@ -3,6 +3,13 @@ import torch.nn as nn
 import torchvision.models as models
 import math
 
+
+'''
+Reference
+https://github.com/SeanNaren/deepspeech.pytorch/blob/master/model.py
+https://github.com/buriburisuri/speech-to-text-wavenet
+'''
+
 class Simple_NN(torch.nn.Module):
     def __init__(self, max_vector):
         super(Simple_NN, self).__init__()
