@@ -7,7 +7,7 @@ import argparse
 
 
 def RMSE(gt_value, pred_value, length):
-    weight = [1,68,182, 809,6041]
+    weight = [1,100,200, 1000, 6000]
     sum_error = 0
     pass_num = 0
     for i in range(length):
