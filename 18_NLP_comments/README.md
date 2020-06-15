@@ -38,7 +38,11 @@ Hate : Hate, Offensive, None
 
 ## Metric
 ```
-각 카테고리(bias, hate)의 F1 Score(weighted) 평균
+각 카테고리(bias, hate)의 Weighted F1 Score 산출 후 산술 평균
+
+F1_result = (F1_bias + F1_hate) / 2
+
+F1_category = 2 * (precision * recall) / (precision + recall)
 ```
 
 
