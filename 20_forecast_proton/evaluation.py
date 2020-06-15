@@ -27,7 +27,7 @@ def RMSE(gt_value, pred_value, length):
         elif (gt_value[i] > 10000):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[4]
     sum_error = float(sum_error / length)
-    sum_error = sum_error ** 0.5 + 1
+    sum_error = sum_error ** 0.5
     return sum_error
 
 def main():
