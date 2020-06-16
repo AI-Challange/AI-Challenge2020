@@ -1,4 +1,4 @@
-# Face Verification Accessories(limit)
+# Face Verification(Accessories) limit
 
 ## Task
 ```
