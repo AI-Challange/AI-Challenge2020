@@ -44,10 +44,10 @@
 ```
 
 ## Data Sample
-<img width=800 src="Image/Sample_1.PNG"/>
+<img width=1000 src="Image/Sample_1.PNG"/>
 
 ***참고 : 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음***
-<img width=800 src="Image/Sample_2.PNG"/>
+<img width=1000 src="Image/Sample_2.PNG"/>
 
 
 ## Metric
