@@ -40,8 +40,8 @@ mask_image_name = "MP_SEL_SUR_033182.png"
 ## Data issue
 <img width=700 height = 100 src="sample_images/data_error.PNG"/>
 
-xml Label File 내에 alley 하위 태그에 attribute가 없는 경우가 있음 -> dataload 시 예외처리 진행하시면 됩니다. (베이스 코드 참고)
-\ mask image에 표시되어 있지 않음
+xml Label File 내에 alley 하위 태그에 attribute가 없는 경우가 있음 -> dataload 시 예외처리 진행하시면 됩니다. (베이스 코드 참고)\
+mask image에 표시되어 있지 않음
 
 
 ## class_name (21 classes)
@@ -55,7 +55,9 @@ xml Label File 내에 alley 하위 태그에 attribute가 없는 경우가 있�
 mAP(mask IoU = 0.5)
 
 #Submission file(xml format)
-* image height = 1080, width = 1920 이미지 크기를 맞춰주셔야 평가가 가능합니다.
+
+***prediction.xml 작성시 좌표값은 'image height = 1080, width = 1920' 기준으로 .
+
 ```
 <predictions>
   <image name="MP_SEL_SUR_000001">
