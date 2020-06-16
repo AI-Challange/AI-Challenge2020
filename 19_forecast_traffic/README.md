@@ -16,7 +16,6 @@
 | validate | 2020.04.17 ~ 05.16 |
 | test | 2020.05.02 ~ 05.31 |
 
-Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-999로 표기됨)
 
 <img width=600 src="Image/Sample_Dataset.png"/>
 
@@ -28,6 +27,8 @@ Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-
  (prediction.txt 파일의 최근 15일 예측값에 대해서 Target Value와 매칭하여 Evaluation)
 *** 주의점 : Test Dataset을 Concat 등으로 확장하여 사용하는 경우, 사후 검증에서도 재현 될 수 있도록 제출 코드상에 자동화하여 작성 !!! 필수 !!!
             (Admin은 참가자에게 제공되는 Sample Dataset을 기준으로 Dataset 보유)
+
+*** Blue Cell : 제공되는 데이터 / Red Cell : 제공되지 않는 데이터 (-999로 표기됨) ***
 
 참고 : Train Dataset(2020. 01. 01 ~ 05. 01) 중 1일치 데이터(3월 30일)은 기계 오류로 인해 데이터가 수집 되지 않았음
 ```
