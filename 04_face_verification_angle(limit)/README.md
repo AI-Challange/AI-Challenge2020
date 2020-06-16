@@ -1,4 +1,4 @@
-# Face Verification(angle)
+# Face Verification angle(limit)
 
 ## Task
 ```
