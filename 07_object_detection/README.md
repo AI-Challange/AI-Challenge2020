@@ -29,6 +29,9 @@ Output : 도로 이미지내의 장애물 클래스와 Confidence, 좌상단, �
 
 image_name = "ZED2_KSC_071987_L_P020901.png", "MP_KSC_000001.jpg" ....
 ```
+## class_name (21 classes)
+
+<img width=500 src="sample_images/classes.png"/>
 
 ## Data Sample
 <img width=350 src="images_for_desc/sample_1.png"/>　　　<img width=350 src="images_for_desc/sample_2.png"/>
