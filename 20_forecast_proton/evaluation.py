@@ -7,13 +7,15 @@ import argparse
 
 
 def RMSE(gt_value, pred_value, length):
-    weight = [1,68,182, 809,6041]
+    weight = [1,100,200, 1000, 6000]
     sum_error = 0
     pass_num = 0
     for i in range(length):
         if gt_value[i] < 0 :
             pass_num += 1
             continue
+        gt_value[i] = math.log(gt_value[i] + 1)
+        pred_value[i] = math.log(pred_value[i] + 1)
         if gt_value[i] < 10:
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[0]
         elif (gt_value[i] > 10) & (gt_value[i] < 100):
@@ -25,8 +27,7 @@ def RMSE(gt_value, pred_value, length):
         elif (gt_value[i] > 10000):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[4]
     sum_error = float(sum_error / length)
-    sum_error = sum_error ** 0.5 + 1
-    sum_error = math.log(sum_error)
+    sum_error = sum_error ** 0.5
     return sum_error
 
 def main():

@@ -38,9 +38,9 @@ Hate : Hate, Offensive, None
 
 ## Metric
 ```
-각 카테고리(bias, hate)의 F1 Score(weighted) 평균
+각 카테고리(Bias, Hate)의 Weighted F1 산출 후 산술 평균
 ```
-
+<img width=600 src="metric.png"/>
 
 ## Description
 ```
@@ -117,4 +117,9 @@ Pytorch Transformers
 https://pytorch.org/hub/huggingface_pytorch-transformers/
 
 https://github.com/huggingface/transformers
+```
+
+## Data Source
+```
+n  J. Moon*, W. I. Cho*, J. Lee, “BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection,” in Proc. SocialNLP @ ACL, Jul. 2020 (to be appeared).
 ```

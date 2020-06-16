@@ -52,6 +52,9 @@ mAP(mask IoU = 0.5)
 
 #Submission file(xml format)
 
+***!!!주의 !!!!***
+
+***prediction.xml 작성시 좌표값은 'image height = 1080, width = 1920' 기준으로 작성***
 ```
 <predictions>
   <image name="MP_SEL_SUR_000001">

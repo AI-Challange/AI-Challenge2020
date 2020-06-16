@@ -104,18 +104,17 @@ time_tag    proton
 
 ## Metric
 ```
-평가를 위한 Metric : RMSE(Custom)
-weight : proton Time Step 기준으로 전체 데이터수/해당 등급 데이터 수
+평가를 위한 Metric : RMSLE(Custom)
 ```
-<img width=400 src="RMSE(Custom).png"/>
+<img width=400 src="RMSE_Custom.png"/>
 
 | Proton Value | Weight |
 | - | - |
 | 0 ~ 10 | 1 | 
-| 10 ~ 100 | 68 |
-| 100 ~ 1000 | 182 |
-| 1000 ~ 10000 | 809 |
-| 10000 ~ | 6041 |
+| 10 ~ 100 | 100 |
+| 100 ~ 1000 | 200 |
+| 1000 ~ 10000 | 1000 |
+| 10000 ~ | 6000 |
 
 ## Commands
 ```

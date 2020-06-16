@@ -60,6 +60,10 @@ So we are going to evaluate using them
 ## Description
 ```
 For given image, baseline model just applies convolutions and decovolutions generating new images that have 112 * 112 size.
+
+40, 100, 400 lux lights are illuminated in a direction or some directions for input images.
+
+And 400 lux lights are illuminated in every directions for answer images(We are going to evaluate with these images as standard).
 ```
 
 ## Commands

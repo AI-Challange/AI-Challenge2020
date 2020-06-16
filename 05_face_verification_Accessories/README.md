@@ -1,4 +1,4 @@
-# Face Verification(angle)
+# Face Verification(Accessories)
 
 ## Task
 ```
@@ -99,6 +99,6 @@ All options in example commands are default value.
 ```
 prediction.txt 파일을 제출하시면 됩니다.
 
-prediction.txt 파일은 front image, side image, label 형태입니다.
+prediction.txt 파일은 none image, acc image, label 형태입니다.
 label 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
 ```
