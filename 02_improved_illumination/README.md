@@ -88,5 +88,7 @@ Make tar.gz file of prediction folder.
 
 tar -zcvf prediction.tar.gz prediction
 
+Caution! You should make tar.gz file of 'one' prediction folder where predicted image files in.
+
 Submit prediction.tar.gz
 ```
