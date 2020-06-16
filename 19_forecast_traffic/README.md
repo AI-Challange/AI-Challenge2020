@@ -46,7 +46,7 @@
 ## Data Sample
 <img width=800 src="Image/Sample_1.PNG"/>
 
-참고 : Test Dataset의 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음
+***참고 : 예측 기간 중 25개 도로의 교통량 데이터는 -999로 처리되어있음***
 <img width=800 src="Image/Sample_2.PNG"/>
 
 
