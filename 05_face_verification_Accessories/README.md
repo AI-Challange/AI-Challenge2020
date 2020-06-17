@@ -104,12 +104,12 @@ label 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
 ```
 
 ## Notice
-'''
+```
 !!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ** 컨테이너 내 기본 제공 폴더
 - /datasets : read only 폴더 (각 태스크를 위한 데이터셋 제공)
-- /tf/notebooks :  read/write 폴더 (참가자가 Wirte 용도로 사용할 폴더)
+- /tf/notebooks :  read/write 폴더 (참가자가 Write 용도로 사용할 폴더)
 1. 참가자는 /datasets 폴더에 주어진 데이터셋을 적절한 폴더(/tf/notebooks) 내에 복사/압축해제 등을 진행한 뒤 사용해야합니다.
    예시> Jpyter Notebook 환경에서 압축 해제 예시 : !bash -c "unzip /datasets/objstrgzip/18_NLP_comments.zip -d /tf/notebooks/
    예시> Terminal(Vs Code) 환경에서 압축 해제 예시 : bash -c "unzip /datasets/objstrgzip/18_NLP_comments.zip -d /tf/notebooks/
@@ -120,4 +120,4 @@ label 부분을 예측 값으로 작성하시어 제출하시면 됩니다.
    참가자는 적절한 폴더에 Dataset, Source code, 결과 파일 등을 저장한 뒤 활용해야합니다.
    
 !!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
-'''
+```
