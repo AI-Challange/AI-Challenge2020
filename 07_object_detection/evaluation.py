@@ -230,12 +230,11 @@ MINSCORE = 0.0
 
 def main() :
     args = argparse.ArgumentParser()
-    args.add_argument('--prediction_path', type=str, default='prediction.txt')
-    args.add_argument('--test_path', type=str, default='test_label')
+    args.add_argument('--prediction_path', type=str, default='./prediction/predictions.xml')
+    args.add_argument('--test_path', type=str, default='data/test_admin')
     
     config = args.parse_args()
 
-    # 예측은 이미지 이름과 같은 txt파일이어야 한다.
     print(evaluation_metrics(config.test_path, config.prediction_path))
 
 if __name__ == '__main__' :
