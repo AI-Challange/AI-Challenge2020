@@ -231,7 +231,7 @@ MINSCORE = 0.0
 def main() :
     args = argparse.ArgumentParser()
     args.add_argument('--prediction_path', type=str, default='./prediction/predictions.xml')
-    args.add_argument('--test_path', type=str, default='data/test_admin')
+    args.add_argument('--test_path', type=str, default='data/test')
     
     config = args.parse_args()
 
