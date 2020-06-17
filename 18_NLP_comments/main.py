@@ -13,6 +13,15 @@ from dataloader import data_loader
 from evaluation import evaluation_metrics
 from model import Net
 
+'''
+컨테이너 내 폴더 설명
+- /datasets : read only 폴더
+- /tf/notebooks :  read/write 폴더
+1. 참가자는 각 문제별로 데이터를 로드하기 위해 적절한 path를 하단에 입력해야합니다. (datasets/각 문제 폴더)
+2. 참가자는 모델의 결과 파일(Ex> prediction.txt)을 write가 가능한 폴더에 저장되도록 적절 한 path를 입력해야합니다. (tf/notebooks)
+3. 명시된 폴더 외에는 세션/컨테이너 등 재시작시 삭제될 수 있으니 참가자는 적절한 폴더에 Source code와 결과 파일 등을 저장해야합니다.
+'''
+
 try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('deepfake')
