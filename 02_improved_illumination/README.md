@@ -95,6 +95,7 @@ Submit prediction.tar.gz
 ## Notice
 
 !!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ** 컨테이너 내 기본 제공 폴더
 - /datasets : read only 폴더 (각 태스크를 위한 데이터셋 제공)
 - /tf/notebooks :  read/write 폴더 (참가자가 Wirte 용도로 사용할 폴더)
