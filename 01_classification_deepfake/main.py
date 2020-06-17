@@ -14,13 +14,19 @@ from evaluation import evaluation_metrics
 from model import Vgg19
 
 '''
+!!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 컨테이너 내 폴더 설명
 - /datasets : read only 폴더
 - /tf/notebooks :  read/write 폴더
-1. 참가자는 /datasets 폴더에 주어진 데이터셋을 적절한 폴더에 복사/압축해제 등을 진행한 뒤 사용하는 것이 권장됩니다.
-2. 참가자는 각 문제별로 데이터를 로드하기 위해 적절한 path를 하단에 입력해야합니다. (datasets/각 문제 폴더)
-3. 참가자는 모델의 결과 파일(Ex> prediction.txt)을 write가 가능한 폴더에 저장되도록 적절 한 path를 입력해야합니다. (tf/notebooks)
-4. 명시된 폴더 외에는 세션/컨테이너 등 재시작시 삭제될 수 있으니 참가자는 적절한 폴더에 Source code와 결과 파일 등을 저장해야합니다.
+1. 참가자는 /datasets 폴더에 주어진 데이터셋을 적절한 폴더에 복사/압축해제 등을 진행한 뒤 사용해야합니다.
+   예시> Jpyter Notebook 환경에서 압축 해제 예시 : !bash -c "unzip /datasets/objstrgzip/18_NLP_comments.zip -d /tf/notebooks/
+   예시> Terminal(Vs Code) 환경에서 압축 해제 예시 : bash -c "unzip /datasets/objstrgzip/18_NLP_comments.zip -d /tf/notebooks/
+2. 참가자는 각 문제별로 데이터를 로드하기 위해 적절한 path를 하단에 입력해야합니다. 
+3. 참가자는 모델의 결과 파일(Ex> prediction.txt)을 write가 가능한 폴더에 저장되도록 적절 한 path를 입력해야합니다. 
+4. 세션/컨테이너 등 재시작시 위에 명시된 폴더(datasets, notebooks) 외에는 삭제될 수 있으니 참가자는 적절한 폴더에 Dataset, Source code, 결과 파일 등을 저장해야합니다.
+
+!!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
 '''
 
 try:
