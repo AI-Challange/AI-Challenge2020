@@ -20,7 +20,7 @@ def evaluate(prediction_labels, gt_labels, max_vector):
                 count +=1
 
     f1 = count / total_len
-    return f1c
+    return f1
 
 
 def read_prediction_pt(file_name):
