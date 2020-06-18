@@ -13,7 +13,7 @@ def evaluate(prediction_labels, gt_labels, max_vector):
         max_len = gt_len if gt_len >= pred_len else pred_len
         total_len += max_len
 
-        min_len = min_len if gt_len >= pred_len else gt_len
+        min_len = pred_len if gt_len >= pred_len else gt_len
 
         for i in range(0, min_len) :
             if gt_labels[query][i] == prediction_labels[query][i] :
