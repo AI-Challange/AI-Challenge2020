@@ -15,7 +15,7 @@ def RMSLE(gt_value, pred_value):
 
 
 def read_test_file(file_name):
-    label_index_pool = [2, 3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 25, 26, 27, 28, 30, 32, 33, 34]
+    label_index_pool = [2, 3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 26, 27, 28, 30, 32, 33, 34]
     f =  open(file_name, 'r', encoding='utf-8-sig')
     lines = f.readlines()
     

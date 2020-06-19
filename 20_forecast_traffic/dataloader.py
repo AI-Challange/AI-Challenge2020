@@ -11,8 +11,8 @@ class CustomDataset(data.Dataset):
         self.root = root
         self.phase = phase
         self.labels = {}
-        self.data_index_pool = [0, 1, 5, 6, 7, 19, 20, 24, 29, 31]
-        self.label_index_pool = [2, 3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 23, 25, 26, 27, 28, 30, 32, 33, 34]
+        self.data_index_pool = [0, 1, 5, 6, 7, 19, 24, 25, 29, 31]
+        self.label_index_pool = [2, 3, 4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 26, 27, 28, 30, 32, 33, 34]
         
         self.label_path = os.path.join(self.root, self.phase + '.csv')
         with open(self.label_path, 'r', encoding='utf-8-sig') as f:
