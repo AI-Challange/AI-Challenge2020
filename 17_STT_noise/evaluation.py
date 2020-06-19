@@ -2,12 +2,14 @@ import argparse
 import numpy as np
 from openpyxl import load_workbook
 
-  
+#Metric 작성
 def evaluate(prediction_labels, gt_labels, max_vector):
     count = 0
     total_len = 0
     for index, query in enumerate(gt_labels):
         gt_len = len(gt_labels[query])
+        if '\ufeff' in prediction_labels[query] : 
+            prediction_labels[query] = prediction_labels[query].replace('\ufeff', '')
         pred_len = len(prediction_labels[query])
 
         max_len = gt_len if gt_len >= pred_len else pred_len
@@ -33,11 +35,13 @@ def read_prediction_pt(file_name):
             name.append(v[0])   
             pred.append(v[1])
             dictionary[v[0]] = v[1]
+    #([l.replace('\n', '').split(' ') for l in lines])
+    #print(dictionary)
     return dictionary
 
 
 def read_prediction_gt(file_name):
-    with open(file_name, 'r', encoding='utf8') as f:
+    with open(file_name, 'r', encoding= 'utf-8-sig') as f:
         lines = f.readlines()
     dictionary = dict([l.replace('\n', '').split(' ') for l in lines])
     return dictionary
@@ -54,5 +58,6 @@ if __name__ == '__main__':
     args = argparse.ArgumentParser()
     args.add_argument('--prediction', type=str, default='pred.txt')
     config = args.parse_args()
+    #testset_path = '/data/7_icls_face/test/test_label'
 
     print(evaluation_metrics(config.prediction, testset_path, max_vector))
