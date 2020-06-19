@@ -8,6 +8,8 @@ def evaluate(prediction_labels, gt_labels, max_vector):
     total_len = 0
     for index, query in enumerate(gt_labels):
         gt_len = len(gt_labels[query])
+        if '\ufeff' in prediction_labels[query] : 
+            prediction_labels[query] = prediction_labels[query].replace('ufeff', '')
         pred_len = len(prediction_labels[query])
 
         max_len = gt_len if gt_len >= pred_len else pred_len
@@ -39,7 +41,7 @@ def read_prediction_pt(file_name):
 
 
 def read_prediction_gt(file_name):
-    with open(file_name, 'r', encoding='utf8') as f:
+    with open(file_name, 'r', encoding= 'utf-8-sig') as f:
         lines = f.readlines()
     dictionary = dict([l.replace('\n', '').split(' ') for l in lines])
     return dictionary
