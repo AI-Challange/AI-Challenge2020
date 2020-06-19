@@ -9,7 +9,7 @@ def evaluate(prediction_labels, gt_labels, max_vector):
     for index, query in enumerate(gt_labels):
         gt_len = len(gt_labels[query])
         if '\ufeff' in prediction_labels[query] : 
-            prediction_labels[query] = prediction_labels[query].replace('ufeff', '')
+            prediction_labels[query] = prediction_labels[query].replace('\ufeff', '')
         pred_len = len(prediction_labels[query])
 
         max_len = gt_len if gt_len >= pred_len else pred_len
