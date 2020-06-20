@@ -158,6 +158,8 @@ def evaluate(GT_PATH, DR_PATH) : #GT_PATH : root test folder DR_PATH : predict x
 
 
 
+
+
 def read_test_file(root):
 
     # dictionary with counter per class
@@ -168,50 +170,53 @@ def read_test_file(root):
     folder_list = glob.glob(root+'/*')
     for fpath in folder_list:
         filename = glob.glob(fpath + '/*.xml')
-        labels = elemTree.parse(filename[0])
-        labels = labels.findall('./image')
-
-        for label in labels :
-            file_id = label.attrib['name'].split(".jpg", 1)[0]
-            bounding_boxes = []
-            is_difficult = False
-            already_seen_classes = []
-            pos=[]
-
-            for polygon_info in label.findall('./polygon') :
-                class_name,_,points,_ = polygon_info.attrib.values()
-                points = points.split(';')
-                poly = []
-                for p in points:
-                    x , y = p.split(',')
-                    poly.append([int(float(x)), int(float(y))])
-                poly = np.array(poly, dtype=np.int64)
-
-                if class_name != 'bike_lane' :
-                    if len(polygon_info.findall('attribute')) == 0:
-                        continue#                
-
-                    class_name += '_'+polygon_info.findall('attribute')[0].text
-                    if class_name == 'alleyblocks':
-                        print(filename, file_id)
-                pos.append({"class_name": class_name, "poly" : poly, "used" : False})
-
-                # count that object
-                if class_name in gt_counter_per_class:
-                    gt_counter_per_class[class_name] += 1
-                else:
-                    # if class didn't exist yet
-                    gt_counter_per_class[class_name] = 1
-
-                if class_name not in already_seen_classes:
-                    if class_name in counter_images_per_class:
-                        counter_images_per_class[class_name] += 1
+        for file in filename:
+            print(file)      
+            #labels = elemTree.parse(filename[0])
+            labels = elemTree.parse(file)            
+            labels = labels.findall('./image')
+    
+            for label in labels :
+                file_id = label.attrib['name'].split(".jpg", 1)[0]
+                bounding_boxes = []
+                is_difficult = False
+                already_seen_classes = []
+                pos=[]
+    
+                for polygon_info in label.findall('./polygon') :
+                    class_name,_,points,_ = list(polygon_info.attrib.values())[:4]
+                    points = points.split(';')
+                    poly = []
+                    for p in points:
+                        x , y = p.split(',')
+                        poly.append([int(float(x)), int(float(y))])
+                    poly = np.array(poly, dtype=np.int64)
+    
+                    if class_name != 'bike_lane' :
+                        if len(polygon_info.findall('attribute')) == 0:
+                            continue#                
+    
+                        class_name += '_'+polygon_info.findall('attribute')[0].text
+                        if class_name == 'alleyblocks':
+                            print(filename, file_id)
+                    pos.append({"class_name": class_name, "poly" : poly, "used" : False})
+    
+                    # count that object
+                    if class_name in gt_counter_per_class:
+                        gt_counter_per_class[class_name] += 1
                     else:
                         # if class didn't exist yet
-                        counter_images_per_class[class_name] = 1
-                    already_seen_classes.append(class_name)
-            pos  = np.array(pos)
-            gt_file_boxes[file_id] = pos
+                        gt_counter_per_class[class_name] = 1
+    
+                    if class_name not in already_seen_classes:
+                        if class_name in counter_images_per_class:
+                            counter_images_per_class[class_name] += 1
+                        else:
+                            # if class didn't exist yet
+                            counter_images_per_class[class_name] = 1
+                        already_seen_classes.append(class_name)
+                pos  = np.array(pos)
+                gt_file_boxes[file_id] = pos
     return gt_file_boxes, gt_counter_per_class
 
 def read_prediction_file(file_path, gt_counter_per_class):
