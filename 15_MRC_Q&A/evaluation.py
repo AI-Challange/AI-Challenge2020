@@ -30,13 +30,13 @@ def wer(r, h):
 
 
 def evaluate(predictions, tests):
-    f1 = 0
+    wer_result = 0
     for qid, ground_truth in tests.items():
         prediction = predictions[qid]
-        f1 += wer(ground_truth.split(), prediction.split())
+        wer_result += wer(ground_truth.split(), prediction.split())
 
-    f1 = 100.0 * f1 / len(predictions)
-    return f1
+    wer_result = wer_result / len(predictions)
+    return wer_result
 
 
 def read_prediction_file(file_name):
@@ -50,7 +50,7 @@ def read_test_file(file_name):
         tests = json.load(f)
 
     tests = dict([(item['id'], item['answers'][0]['text']) for topic in tests['data'] for item in topic['paragraphs'][0]['qas']])
-    
+
     return tests
 
 
