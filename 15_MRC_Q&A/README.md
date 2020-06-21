@@ -66,19 +66,15 @@
 
 ## Metric
 ```
-Word Error Rate (WER)
+필독 부탁드립니다!
 
-띄어쓰기 단위로 분리한 정답과 예측값의 sequence를 비교하여 insertions(I), deletions(D), substitutions(S)를 구한 뒤 아래와 같은 식을 적용합니다.
+기존 Word Error Rate 평가 방식에 문제점이 발견되어, 부득이하게 음절 단위의 f1 score를 이용한 평가로 변경하게 되었습니다.
 
-Insertion (I): Words that are incorrectly added in the predicted sequence.
-Deletion (D): Words that are undetected in the predicted sequence.
-Substitution (S): Words that were substituted between answer and predicted sequence.
+KorQuAD 2.0 evaluation script와 동일한 방식으로 평가되며, 평가에 대한 자세한 방법은 evaluation.py를 참고해 주시기 바랍니다.
 
-맞춘 단어의 수를 C라고 했을 때, N은 C + S + D입니다.
-
-자세한 설명은 evaluation 코드와 https://en.wikipedia.org/wiki/Word_error_rate 를 참고하시면 됩니다.
+https://korquad.github.io/
 ```
-<img width=350 src="images_for_desc/WER.png"/>
+
 
 ## Description
 ```
