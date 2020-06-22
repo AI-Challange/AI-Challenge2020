@@ -19,13 +19,13 @@ def RMSE(gt_value, pred_value, length):
         pred_value[i] = math.log(pred_value[i] + 1)
         if standard < 10:
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[0]
-        elif (standard > 10) & (standard < 100):
+        elif (standard >= 10) & (standard < 100):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[1]
-        elif (standard > 100) & (standard < 1000):
+        elif (standard >= 100) & (standard < 1000):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[2]
-        elif (standard > 1000) & (standard < 10000):
+        elif (standard >= 1000) & (standard < 10000):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[3]
-        elif (standard > 10000):
+        elif (standard >= 10000):
             sum_error += (gt_value[i] - pred_value[i]) ** 2 * weight[4]
     sum_error = float(sum_error / length)
     sum_error = sum_error ** 0.5
