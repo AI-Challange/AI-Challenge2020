@@ -35,7 +35,7 @@ try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('deepfake')
 except:
-    DATASET_PATH = os.path.join('./data/08_road_conditon/test')
+    DATASET_PATH = os.path.join('./data/08_road_conditon/val')
 
 def save_model(model_name, model, optimizer, scheduler):
     state = {

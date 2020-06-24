@@ -31,7 +31,6 @@ class CustomDataset(object):
         label = self.labels.findall('./image')[idx]
 
         masks = []
-
         boxes = []
         class_names = []
         class_num = {'sidewalk_blocks' : 1, 'alley_damaged' : 2, 'sidewalk_damaged' : 3, 'caution_zone_manhole': 4, 'braille_guide_blocks_damaged':5,\
@@ -100,32 +99,15 @@ class Testloader(object):
         # 모든 이미지 파일들을 읽고, 정렬하여
         # 이미지와 분할 마스크 정렬을 확인합니다
         self.imgs = list(sorted(glob(os.path.join(root, '*.jpg'))))
-        # self.labels = elemTree.parse(glob(root + '/*.xml')[0])
-        #self.masks = list(sorted(os.listdir(os.path.join(root, 'MASK'))))
+
 
     def __getitem__(self, idx):
         # 이미지와 마스크를 읽어옵니다
         img_path = self.imgs[idx]
         img_name = img_path.split('/')[-1].split('.')[0]
 
-        #mask_path = os.path.join(self.root, 'MASK', self.masks[idx])
         img = Image.open(img_path).convert('RGB')
         h, w = img.size
-        # 분할 마스크는 RGB로 변환하지 않음을 유의하세요
-        # 왜냐하면 각 색상은 다른 인스턴스에 해당하며, 0은 배경에 해당합니다
-        # label = self.labels.findall('./image')[idx]
-        #mask = Image.open(mask_path).convert('L')
-        # numpy 배열을 PIL 이미지로 변환합니다
-        #mask = np.array(mask)
-        # 인스턴스들은 다른 색들로 인코딩 되어 있습니다.
-        #obj_ids = np.unique(mask)
-        #print(obj_ids)
-        # 첫번째 id 는 배경이라 제거합니다
-        #obj_ids = obj_ids[1:]
-
-        # 컬러 인코딩된 마스크를 바이너리 마스크 세트로 나눕니다
-        #masks = mask == obj_ids[:, None, None]
-        
         
         target = {}
         target["image_id"] = img_name
