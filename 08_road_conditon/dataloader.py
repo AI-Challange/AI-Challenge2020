@@ -73,16 +73,16 @@ class CustomDataset(object):
         image_id = torch.tensor([idx])
         #area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         # 모든 인스턴스는 군중(crowd) 상태가 아님을 가정합니다
-        iscrowd = torch.zeros((len(class_names),), dtype=torch.int64)
-        area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
+        # iscrowd = torch.zeros((len(class_names),), dtype=torch.int64)
+        # area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         
         target = {}
         target["boxes"] = boxes
         target["labels"] = class_names
         target["masks"] = masks
         target["image_id"] = image_id
-        target["area"] = area
-        target["iscrowd"] = iscrowd
+        # target["area"] = area
+        # target["iscrowd"] = iscrowd
 
         if self.transforms is not None:
             img, target = self.transforms(img, target)
