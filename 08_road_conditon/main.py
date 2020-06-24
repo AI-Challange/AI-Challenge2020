@@ -12,10 +12,10 @@ from imantics import Polygons, Mask
 from shapely.geometry import Polygon
 import xml.etree.ElementTree as elemTree
 import numpy as np
+import sys
 
 '''
 !!!!!!!!!!!!!!!!!!!!! 필독!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 ** 컨테이너 내 기본 제공 폴더
 - /datasets : read only 폴더 (각 태스크를 위한 데이터셋 제공)
 - /tf/notebooks :  read/write 폴더 (참가자가 Wirte 용도로 사용할 폴더)
@@ -35,7 +35,7 @@ try:
     from nipa import nipa_data
     DATASET_PATH = nipa_data.get_data_root('deepfake')
 except:
-    DATASET_PATH = os.path.join('./Surface_1')
+    DATASET_PATH = os.path.join('./data/08_road_conditon/test')
 
 def save_model(model_name, model, optimizer, scheduler):
     state = {
@@ -82,7 +82,7 @@ def test(model, data_loader_test, device, predict_path) :
         # 이미지 한장에 대하여
 
         xml_image = elemTree.SubElement(pred_xml, 'image')
-        xml_image.attrib['name'] = target[0]['image_id'].split('.')[0]
+        xml_image.attrib['name'] = target[0]['image_id']
         xml_image.text = '\n    '
 
         for index in range(len(masks)) :
@@ -196,7 +196,7 @@ def main():
     args.add_argument("--lr", type=int, default=0.005)
     args.add_argument("--cuda", type=bool, default=True)
     args.add_argument("--num_epochs", type=int, default=30)
-    args.add_argument("--model_name", type=str, default="mask_1.pth")
+    args.add_argument("--model_name", type=str, default="weights/0.pth")
     args.add_argument("--prediction_file", type=str, default="prediction")
     args.add_argument("--batch", type=int, default=16)
     args.add_argument("--mode", type=str, default="train")
@@ -235,7 +235,7 @@ def main():
         dataset =dataloader.make_dataset(DATASET_PATH)
         # 데이터 로더를 학습용과 검증용으로 정의합니다
         dataset_loader = torch.utils.data.DataLoader(
-            dataset, batch_size=batch, shuffle=True, num_workers=4,collate_fn=dataloader.collate_fn)
+            dataset, batch_size=batch, shuffle=True, num_workers=0,collate_fn=dataloader.collate_fn)
 
         # 옵티마이저(Optimizer)를 만듭니다
         params = [p for p in new_model.parameters() if p.requires_grad]
@@ -248,7 +248,7 @@ def main():
         train(new_model, dataset_loader, device, num_epochs, optimizer=optimizer, lr_scheduler=lr_scheduler)
     
     elif mode == 'test' :
-        dataset_test =dataloader.make_dataset(DATASET_PATH)
+        dataset_test =dataloader.make_testset('/tf/notebooks/08/data/08_road_conditon/test')
 
         data_loader_test = torch.utils.data.DataLoader(
             dataset_test, batch_size=1, shuffle=False, collate_fn=dataloader.collate_fn)
@@ -261,4 +261,5 @@ def main():
     print("That's it!")
 
 if __name__ == '__main__' :
+    sys.setrecursionlimit(3000)
     main()

@@ -179,7 +179,7 @@ def read_test_file(root):
             pos=[]
 
             for polygon_info in label.findall('./polygon') :
-                class_name,_,points,_ = polygon_info.attrib.values()
+                class_name,points = polygon_info.attrib['label'], polygon_info.attrib['points']
                 points = points.split(';')
                 poly = []
                 for p in points:
