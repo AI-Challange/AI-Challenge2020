@@ -53,7 +53,7 @@ sample_pcm 폴더 확인
 
 ## Metric
 ```
-평가를 위한 Metric : 음절단위 F1
+평가를 위한 Metric : Custom Accuracy
 
 ```
 
