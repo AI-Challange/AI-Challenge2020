@@ -23,8 +23,8 @@ def evaluate(prediction_labels, gt_labels, max_vector):
             if gt_labels[query][i] == prediction_labels[query][i] :
                 count +=1
 
-    f1 = count / total_len
-    return f1
+    acc = count / total_len
+    return acc
 
 
 def read_prediction_pt(file_name):
