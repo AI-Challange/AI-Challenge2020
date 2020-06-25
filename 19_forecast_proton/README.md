@@ -130,7 +130,7 @@ python main.py --model_name="1" --mode="test"
 
 ## Reference
 본 문제에서는 베이스라인에서 특정 모델 아키텍쳐를 제공하지 않습니다. \
-(데이터들의 시관관계 맵핑도 사용자의 Skill로 평가합니다.) \
+(데이터들의 시관계 맵핑도 사용자의 Skill로 평가합니다.) \
 RNN Model Architecture : https://github.com/chickenbestlover/RNN-Time-series-Anomaly-Detection
 
 
