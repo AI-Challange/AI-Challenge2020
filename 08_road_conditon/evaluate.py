@@ -243,7 +243,7 @@ def read_prediction_file(file_path, gt_counter_per_class):
                     poly = poly.split(';')[:-1]
                     for p in poly:
                         x, y = p.split(',')
-                        pos.append([int(x), int(y)])
+                        pos.append([int(float(x)), int(float(y))])
                     pos = np.array([pos])
                     polygons.append({'confidence': confidence, 'file_id':file_id, 'poly': pos})
         polygons.sort(key=lambda x:float(x['confidence']), reverse=True)
